@@ -1,0 +1,107 @@
+{
+  "title": "Zora API Vocabulary",
+  "description": "Domain vocabulary and key terms for the Zora NFT Protocol and Coins REST API",
+  "version": "1.0.0",
+  "terms": [
+    {
+      "term": "Zora Coin",
+      "definition": "An ERC-20 creator monetization token minted on the Zora protocol that trades on a bonding curve, allowing fans and collectors to speculate on and support creator content.",
+      "type": "concept"
+    },
+    {
+      "term": "NFT",
+      "definition": "Non-Fungible Token — a unique blockchain-based digital asset representing ownership of a specific item, artwork, or collectible under ERC-721 or ERC-1155 standards.",
+      "type": "concept"
+    },
+    {
+      "term": "ERC-721",
+      "definition": "Ethereum token standard for non-fungible tokens where each token is unique and indivisible.",
+      "type": "standard"
+    },
+    {
+      "term": "ERC-1155",
+      "definition": "Ethereum multi-token standard that supports both fungible and non-fungible tokens in a single contract, enabling batch transfers and reduced gas costs.",
+      "type": "standard"
+    },
+    {
+      "term": "Zora Network",
+      "definition": "An OP Stack Layer 2 rollup built on Ethereum with Chain ID 7777777, optimized for NFT minting and creator transactions with lower fees.",
+      "type": "network"
+    },
+    {
+      "term": "OP Stack",
+      "definition": "The open-source modular blockchain framework developed by Optimism used to build Layer 2 networks like Zora Network, Base, and Optimism mainnet.",
+      "type": "technology"
+    },
+    {
+      "term": "Mint",
+      "definition": "The act of creating a new NFT token on-chain by calling a smart contract's mint function, recording ownership on the blockchain.",
+      "type": "action"
+    },
+    {
+      "term": "Premint",
+      "definition": "A gasless off-chain signature-based reservation of a future NFT mint on Zora, allowing creators to pre-authorize tokens before paying gas.",
+      "type": "action"
+    },
+    {
+      "term": "Bonding Curve",
+      "definition": "An automated market-making mechanism used by Zora Coins where the price of a coin increases as more coins are purchased, creating a continuous pricing function.",
+      "type": "concept"
+    },
+    {
+      "term": "Collection",
+      "definition": "A smart contract address grouping multiple NFTs under a single creator or project, either ERC-721 (unique items) or ERC-1155 (editions).",
+      "type": "entity"
+    },
+    {
+      "term": "royalty",
+      "definition": "A percentage of secondary sale proceeds automatically paid to the original creator on each resale, encoded in the smart contract.",
+      "type": "concept"
+    },
+    {
+      "term": "X-API-KEY",
+      "definition": "The HTTP request header used to authenticate against the Zora GraphQL NFT API. Obtain a key at keys.api.zora.co to unlock higher rate limits.",
+      "type": "authentication"
+    },
+    {
+      "term": "api-key",
+      "definition": "The HTTP request header used to authenticate against the Zora Coins SDK REST API.",
+      "type": "authentication"
+    },
+    {
+      "term": "GraphQL",
+      "definition": "Query language and runtime used by the Zora NFT API allowing clients to request exactly the data fields needed for collections, tokens, and events.",
+      "type": "protocol"
+    },
+    {
+      "term": "Creator Client",
+      "definition": "The component of the Zora Protocol SDK enabling creators to deploy and manage ERC-1155/ERC-721 contracts and configure minting settings.",
+      "type": "sdk-component"
+    },
+    {
+      "term": "Collector Client",
+      "definition": "The component of the Zora Protocol SDK enabling collectors to mint tokens, including both on-chain and gasless premint flows.",
+      "type": "sdk-component"
+    },
+    {
+      "term": "Zora20Token",
+      "definition": "The API data model representing a Zora Coin (ERC-20 creator token), including metadata, market cap, price, holder count, and creator information.",
+      "type": "model"
+    },
+    {
+      "term": "explore",
+      "definition": "Discovery endpoint returning curated or algorithmically ranked lists of Zora Coins including new, trending, and top-gaining coins.",
+      "type": "endpoint"
+    },
+    {
+      "term": "profile",
+      "definition": "A Zora user account entity containing wallet address, display name, bio, avatar, social handles (Twitter, Instagram, TikTok, Farcaster), and linked coin holdings.",
+      "type": "entity"
+    },
+    {
+      "term": "coinSwap",
+      "definition": "An on-chain transaction event in which a Zora Coin is bought or sold, recorded with price, amount, trader address, and timestamp.",
+      "type": "entity"
+    }
+  ]
+}

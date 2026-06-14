@@ -1,0 +1,61 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "zora": "https://zora.co/vocab#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "ZoraCoin": "zora:ZoraCoin",
+    "NFTCollection": "zora:NFTCollection",
+    "NFTToken": "zora:NFTToken",
+    "ZoraProfile": "zora:ZoraProfile",
+    "CoinSwap": "zora:CoinSwap",
+    "MintEvent": "zora:MintEvent",
+    "SaleEvent": "zora:SaleEvent",
+
+    "id": "@id",
+    "type": "@type",
+
+    "name": { "@id": "schema:name", "@type": "xsd:string" },
+    "description": { "@id": "schema:description", "@type": "xsd:string" },
+    "image": { "@id": "schema:image", "@type": "@id" },
+    "url": { "@id": "schema:url", "@type": "@id" },
+    "creator": { "@id": "schema:creator", "@type": "@id" },
+    "dateCreated": { "@id": "schema:dateCreated", "@type": "xsd:dateTime" },
+    "identifier": { "@id": "schema:identifier", "@type": "xsd:string" },
+
+    "contractAddress": { "@id": "zora:contractAddress", "@type": "xsd:string" },
+    "chainId": { "@id": "zora:chainId", "@type": "xsd:integer" },
+    "tokenId": { "@id": "zora:tokenId", "@type": "xsd:string" },
+    "tokenStandard": { "@id": "zora:tokenStandard", "@type": "xsd:string" },
+
+    "marketCap": { "@id": "zora:marketCap", "@type": "xsd:decimal" },
+    "price": { "@id": "schema:price", "@type": "xsd:decimal" },
+    "priceDelta24h": { "@id": "zora:priceDelta24h", "@type": "xsd:decimal" },
+    "totalSupply": { "@id": "zora:totalSupply", "@type": "xsd:decimal" },
+    "holderCount": { "@id": "zora:holderCount", "@type": "xsd:integer" },
+    "uniqueHolders": { "@id": "zora:uniqueHolders", "@type": "xsd:integer" },
+    "volume24h": { "@id": "zora:volume24h", "@type": "xsd:decimal" },
+
+    "walletAddress": { "@id": "zora:walletAddress", "@type": "xsd:string" },
+    "handle": { "@id": "zora:handle", "@type": "xsd:string" },
+    "twitterHandle": { "@id": "zora:twitterHandle", "@type": "xsd:string" },
+    "farcasterHandle": { "@id": "zora:farcasterHandle", "@type": "xsd:string" },
+
+    "tradeType": { "@id": "zora:tradeType", "@type": "xsd:string" },
+    "amountIn": { "@id": "zora:amountIn", "@type": "xsd:decimal" },
+    "amountOut": { "@id": "zora:amountOut", "@type": "xsd:decimal" },
+    "priceUsd": { "@id": "zora:priceUsd", "@type": "xsd:decimal" },
+
+    "royaltyBPS": { "@id": "zora:royaltyBPS", "@type": "xsd:integer" },
+    "mintPrice": { "@id": "zora:mintPrice", "@type": "xsd:decimal" },
+    "network": { "@id": "zora:network", "@type": "xsd:string" },
+    "networkName": { "@id": "zora:networkName", "@type": "xsd:string" },
+
+    "coins": { "@id": "zora:coins", "@container": "@set" },
+    "holders": { "@id": "zora:holders", "@container": "@set" },
+    "swaps": { "@id": "zora:swaps", "@container": "@set" },
+    "comments": { "@id": "zora:comments", "@container": "@set" },
+    "pagination": { "@id": "zora:pagination" }
+  }
+}

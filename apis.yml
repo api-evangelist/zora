@@ -76,6 +76,8 @@ apis:
         url: https://docs.zora.co/coins/sdk/public-rest-api
       - type: OpenAPI
         url: https://api-sdk.zora.engineering/docs
+      - type: OpenAPI
+        url: openapi/zora-coins-rest-api-openapi.json
 
   - aid: zora:protocol-sdk
     name: Zora Protocol SDK

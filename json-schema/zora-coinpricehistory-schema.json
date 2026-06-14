@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zora.co/schemas/coinpricehistory.json",
+  "title": "zoraSDK_coinPriceHistory query",
+  "description": "Response schema for GetCoinPriceHistory - /coinPriceHistory",
+  "type": "object",
+  "properties": {
+    "zora20Token": {
+      "type": "object",
+      "properties": {
+        "oneHour": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "timestamp": {
+                "type": "string",
+                "nullable": false,
+                "description": "Date with time (isoformat)"
+              },
+              "closePrice": {
+                "type": "string",
+                "nullable": false,
+                "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text."
+              }
+            },
+            "required": [
+              "timestamp",
+              "closePrice"
+            ]
+          },
+          "nullable": false
+        },
+        "oneDay": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "timestamp": {
+                "type": "string",
+                "nullable": false,
+                "description": "Date with time (isoformat)"
+              },
+              "closePrice": {
+                "type": "string",
+                "nullable": false,
+                "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text."
+              }
+            },
+            "required": [
+              "timestamp",
+              "closePrice"
+            ]
+          },
+          "nullable": false
+        },
+        "oneWeek": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "timestamp": {
+                "type": "string",
+                "nullable": false,
+                "description": "Date with time (isoformat)"
+              },
+              "closePrice": {
+                "type": "string",
+                "nullable": false,
+                "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text."
+              }
+            },
+            "required": [
+              "timestamp",
+              "closePrice"
+            ]
+          },
+          "nullable": false
+        },
+        "oneMonth": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "timestamp": {
+                "type": "string",
+                "nullable": false,
+                "description": "Date with time (isoformat)"
+              },
+              "closePrice": {
+                "type": "string",
+                "nullable": false,
+                "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text."
+              }
+            },
+            "required": [
+              "timestamp",
+              "closePrice"
+            ]
+          },
+          "nullable": false
+        },
+        "all": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "timestamp": {
+                "type": "string",
+                "nullable": false,
+                "description": "Date with time (isoformat)"
+              },
+              "closePrice": {
+                "type": "string",
+                "nullable": false,
+                "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text."
+              }
+            },
+            "required": [
+              "timestamp",
+              "closePrice"
+            ]
+          },
+          "nullable": false
+        }
+      },
+      "required": [
+        "oneHour",
+        "oneDay",
+        "oneWeek",
+        "oneMonth",
+        "all"
+      ],
+      "nullable": true
+    }
+  }
+}

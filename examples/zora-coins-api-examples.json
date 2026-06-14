@@ -1,0 +1,491 @@
+{
+  "title": "Zora Coins SDK API - Request Examples",
+  "description": "Example requests for all Zora Coins SDK REST API endpoints",
+  "baseUrl": "https://api-sdk.zora.engineering",
+  "authentication": {
+    "type": "apiKey",
+    "header": "api-key"
+  },
+  "examples": [
+    {
+      "operationId": "GetApiKey",
+      "path": "/apiKey",
+      "method": "GET",
+      "summary": "zoraSDK_apiKey query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/apiKey",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "apiKey": "<apiKey>"
+        }
+      }
+    },
+    {
+      "operationId": "GetCoin",
+      "path": "/coin",
+      "method": "GET",
+      "summary": "zoraSDK_coin query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/coin",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "address": "<address>",
+          "chain": 10
+        }
+      }
+    },
+    {
+      "operationId": "GetCoinComments",
+      "path": "/coinComments",
+      "method": "GET",
+      "summary": "zoraSDK_coinComments query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/coinComments",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "address": "<address>",
+          "chain": 10,
+          "after": "<after>",
+          "count": 10
+        }
+      }
+    },
+    {
+      "operationId": "GetCoinHolders",
+      "path": "/coinHolders",
+      "method": "GET",
+      "summary": "zoraSDK_coinHolders query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/coinHolders",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "chainId": 10,
+          "address": "<address>",
+          "after": "<after>",
+          "count": 10
+        }
+      }
+    },
+    {
+      "operationId": "GetCoinPriceHistory",
+      "path": "/coinPriceHistory",
+      "method": "GET",
+      "summary": "zoraSDK_coinPriceHistory query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/coinPriceHistory",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "address": "<address>",
+          "chain": 10
+        }
+      }
+    },
+    {
+      "operationId": "GetCoinSwaps",
+      "path": "/coinSwaps",
+      "method": "GET",
+      "summary": "zoraSDK_coinSwaps query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/coinSwaps",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "address": "<address>",
+          "chain": 10,
+          "after": "<after>",
+          "first": 10
+        }
+      }
+    },
+    {
+      "operationId": "GetCoins",
+      "path": "/coins",
+      "method": "GET",
+      "summary": "zoraSDK_coins query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/coins",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {}
+      }
+    },
+    {
+      "operationId": "GetCoinsList",
+      "path": "/coinsList",
+      "method": "GET",
+      "summary": "zoraSDK_coinsList query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/coinsList",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "first": 10,
+          "after": "<after>",
+          "includeUSDCPrice": true
+        }
+      }
+    },
+    {
+      "operationId": "GetContentCoinPoolConfig",
+      "path": "/contentCoinPoolConfig",
+      "method": "GET",
+      "summary": "zoraSDK_contentCoinPoolConfig query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/contentCoinPoolConfig",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "creatorIdentifier": "<creatorIdentifier>",
+          "currencyType": "<currencyType>"
+        }
+      }
+    },
+    {
+      "operationId": "SetCreateUploadJWT",
+      "path": "/createUploadJWT",
+      "method": "POST",
+      "summary": "zoraSDK_createUploadJWT mutation",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/createUploadJWT",
+        "method": "POST",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {}
+      }
+    },
+    {
+      "operationId": "GetCreatorCoinPoolConfig",
+      "path": "/creatorCoinPoolConfig",
+      "method": "GET",
+      "summary": "zoraSDK_creatorCoinPoolConfig query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/creatorCoinPoolConfig",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "targetMarketCapUsd": 10
+        }
+      }
+    },
+    {
+      "operationId": "GetCreatorLivestreamComments",
+      "path": "/creatorLivestreamComments",
+      "method": "GET",
+      "summary": "zoraSDK_creatorLivestreamComments query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/creatorLivestreamComments",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "address": "<address>",
+          "chain": 10,
+          "after": "<after>",
+          "count": 10
+        }
+      }
+    },
+    {
+      "operationId": "GetExplore",
+      "path": "/explore",
+      "method": "GET",
+      "summary": "zoraSDK_explore query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/explore",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "listType": "<listType>",
+          "count": 10,
+          "after": "<after>"
+        }
+      }
+    },
+    {
+      "operationId": "GetFeaturedCreators",
+      "path": "/featuredCreators",
+      "method": "GET",
+      "summary": "zoraSDK_featuredCreators query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/featuredCreators",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "year": 10,
+          "week": 10,
+          "first": 10,
+          "after": "<after>"
+        }
+      }
+    },
+    {
+      "operationId": "GetLatestLiveStreams",
+      "path": "/latestLiveStreams",
+      "method": "GET",
+      "summary": "zoraSDK_latestLiveStreams query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/latestLiveStreams",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "first": 10,
+          "after": "<after>"
+        }
+      }
+    },
+    {
+      "operationId": "GetProfile",
+      "path": "/profile",
+      "method": "GET",
+      "summary": "zoraSDK_profile query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/profile",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "identifier": "<identifier>"
+        }
+      }
+    },
+    {
+      "operationId": "GetProfileBalances",
+      "path": "/profileBalances",
+      "method": "GET",
+      "summary": "zoraSDK_profileBalances query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/profileBalances",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "identifier": "<identifier>",
+          "count": 10,
+          "after": "<after>",
+          "sortOption": "<sortOption>",
+          "excludeHidden": true
+        }
+      }
+    },
+    {
+      "operationId": "GetProfileBySocialHandle",
+      "path": "/profileBySocialHandle",
+      "method": "GET",
+      "summary": "zoraSDK_profileBySocialHandle query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/profileBySocialHandle",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "platform": "<platform>",
+          "handle": "<handle>"
+        }
+      }
+    },
+    {
+      "operationId": "GetProfileCoins",
+      "path": "/profileCoins",
+      "method": "GET",
+      "summary": "zoraSDK_profileCoins query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/profileCoins",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "identifier": "<identifier>",
+          "count": 10,
+          "after": "<after>"
+        }
+      }
+    },
+    {
+      "operationId": "GetProfileSocial",
+      "path": "/profileSocial",
+      "method": "GET",
+      "summary": "zoraSDK_profileSocial query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/profileSocial",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "identifier": "<identifier>"
+        }
+      }
+    },
+    {
+      "operationId": "GetTokenInfo",
+      "path": "/tokenInfo",
+      "method": "GET",
+      "summary": "zoraSDK_tokenInfo query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/tokenInfo",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "address": "<address>",
+          "chainId": 10
+        }
+      }
+    },
+    {
+      "operationId": "GetTopLiveStreams",
+      "path": "/topLiveStreams",
+      "method": "GET",
+      "summary": "zoraSDK_topLiveStreams query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/topLiveStreams",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "first": 10,
+          "after": "<after>"
+        }
+      }
+    },
+    {
+      "operationId": "GetTraderLeaderboard",
+      "path": "/traderLeaderboard",
+      "method": "GET",
+      "summary": "zoraSDK_traderLeaderboard query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/traderLeaderboard",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "week": 10,
+          "year": 10,
+          "first": 10,
+          "after": "<after>"
+        }
+      }
+    },
+    {
+      "operationId": "GetTrendCoin",
+      "path": "/trendCoin",
+      "method": "GET",
+      "summary": "zoraSDK_trendCoin query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/trendCoin",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "ticker": "<ticker>",
+          "chainId": 10
+        }
+      }
+    },
+    {
+      "operationId": "GetTrendsByName",
+      "path": "/trendsByName",
+      "method": "GET",
+      "summary": "zoraSDK_trendsByName query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/trendsByName",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "name": "<name>",
+          "first": 10,
+          "after": "<after>"
+        }
+      }
+    },
+    {
+      "operationId": "GetWalletTradeActivity",
+      "path": "/walletTradeActivity",
+      "method": "GET",
+      "summary": "zoraSDK_walletTradeActivity query",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/walletTradeActivity",
+        "method": "GET",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {
+          "identifier": "<identifier>",
+          "after": "<after>",
+          "first": 10
+        }
+      }
+    },
+    {
+      "operationId": "postQuote",
+      "path": "/quote",
+      "method": "POST",
+      "summary": "",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/quote",
+        "method": "POST",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {}
+      }
+    },
+    {
+      "operationId": "postCreateContent",
+      "path": "/create/content",
+      "method": "POST",
+      "summary": "",
+      "exampleRequest": {
+        "url": "https://api-sdk.zora.engineering/create/content",
+        "method": "POST",
+        "headers": {
+          "api-key": "<your-api-key>"
+        },
+        "parameters": {}
+      }
+    }
+  ]
+}
