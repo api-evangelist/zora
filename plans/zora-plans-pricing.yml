@@ -1,0 +1,119 @@
+name: Zora API Plans and Pricing
+description: >
+  Access tiers for the Zora NFT GraphQL API and Coins SDK REST API.
+  Zora does not publish formal named subscription tiers with fixed prices.
+  The public APIs are free to use; higher rate limits are unlocked by
+  obtaining a free API key through Zora Developer Settings. Enterprise or
+  very high-volume access can be arranged by contacting the Zora team.
+url: https://raw.githubusercontent.com/api-evangelist/zora/refs/heads/main/plans/zora-plans-pricing.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.1'
+provider: zora
+currency: USD
+billingCycle: none
+
+plans:
+  - id: public-unauthenticated
+    name: Public (No API Key)
+    price: 0
+    interval: none
+    description: >-
+      Open access to the Zora NFT GraphQL API and Coins SDK REST API without
+      registration. Subject to a shared rate limit of 120 requests per minute.
+      Suitable for development, prototyping, and low-traffic integrations.
+    quota:
+      requests: 120
+      window: minute
+    features:
+      - id: nft-graphql-api
+        included: true
+      - id: coins-rest-api
+        included: true
+      - id: protocol-sdk
+        included: true
+      - id: network-rpc-public
+        included: true
+      - id: higher-rate-limits
+        included: false
+    support: Community / GitHub Issues
+    overage:
+      allowed: false
+
+  - id: api-key
+    name: API Key (Free)
+    price: 0
+    interval: none
+    description: >-
+      Free API key obtained through Zora Developer Settings at
+      https://zora.co/settings/developer. Significantly higher rate limits
+      than the unauthenticated tier. Required for production applications
+      and any integration making more than 120 requests per minute.
+      Include the key in requests via the api-key header (Coins SDK REST API)
+      or X-API-KEY header (NFT GraphQL API).
+    quota:
+      requests: null
+      window: minute
+      notes: >-
+        Higher than 120 req/min; exact ceiling not published. Contact Zora
+        for details on volume constraints at scale.
+    features:
+      - id: nft-graphql-api
+        included: true
+      - id: coins-rest-api
+        included: true
+      - id: protocol-sdk
+        included: true
+      - id: network-rpc-public
+        included: true
+      - id: higher-rate-limits
+        included: true
+    support: Community / GitHub Issues
+    overage:
+      allowed: false
+      notes: Contact Zora team for volume beyond standard API key limits.
+
+  - id: enterprise
+    name: Enterprise
+    price: null
+    priceNotes: Custom — contact Zora team.
+    interval: custom
+    description: >-
+      Custom arrangements for very high-volume or specialized API access.
+      No public pricing published. Reach out via Zora Discord or developer
+      channels.
+    quota:
+      requests: null
+      window: null
+      notes: Negotiated per customer.
+    features:
+      - id: nft-graphql-api
+        included: true
+      - id: coins-rest-api
+        included: true
+      - id: protocol-sdk
+        included: true
+      - id: network-rpc-public
+        included: true
+      - id: higher-rate-limits
+        included: true
+      - id: dedicated-support
+        included: true
+    support: Dedicated
+    overage:
+      allowed: true
+      pricePerRequest: negotiated
+
+featureCatalog:
+  - id: nft-graphql-api
+    label: Zora NFT GraphQL API (api.zora.co/graphql)
+  - id: coins-rest-api
+    label: Zora Coins SDK REST API (api-sdk.zora.engineering/api)
+  - id: protocol-sdk
+    label: Zora Protocol SDK (TypeScript)
+  - id: network-rpc-public
+    label: Zora Network Public RPC (rpc.zora.energy)
+  - id: higher-rate-limits
+    label: Higher Rate Limits (>120 req/min)
+  - id: dedicated-support
+    label: Dedicated Support / SLA

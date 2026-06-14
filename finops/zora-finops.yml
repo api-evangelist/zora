@@ -1,0 +1,205 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+provider: Zora
+providerId: zora
+publisherName: Zora
+serviceCategory: API
+created: '2026-06-13'
+modified: '2026-06-13'
+tags:
+  - NFT
+  - Web3
+  - Blockchain
+  - Creator Economy
+  - Marketplace
+  - FinOps
+  - Cost Management
+  - FOCUS
+description: >-
+  FinOps framework definition for the Zora API surface. Zora's public APIs
+  (NFT GraphQL API, Coins SDK REST API, Protocol SDK) are free to use with a
+  free API key. There are no metered per-request charges published by Zora;
+  cost exposure arises from on-chain gas fees when minting or transacting via
+  the Protocol SDK, and from third-party node provider charges if teams choose
+  premium RPC endpoints over the public shared node.
+
+principles:
+  - name: Visibility
+    description: >-
+      Track API call volumes to distinguish free-tier unauthenticated traffic
+      from API-key-authenticated traffic. Monitor on-chain gas costs separately
+      as they are the primary real cost driver.
+  - name: Allocation
+    description: >-
+      Tag API key usage and on-chain wallet addresses by team, environment,
+      and product feature for cost allocation.
+  - name: Optimization
+    description: >-
+      Use GraphQL query projection to request only needed fields, reducing
+      payload size and improving cache hit rates. Batch queries where the API
+      supports it to stay within rate limits.
+  - name: Accountability
+    description: >-
+      Assign wallet addresses and API keys to specific engineering teams or
+      product lines to surface gas spend by owner.
+
+domains:
+  - name: Understand Usage and Cost
+    capabilities:
+      - Data Ingestion
+      - Allocation
+      - Reporting and Analytics
+      - Anomaly Management
+  - name: Quantify Business Value
+    capabilities:
+      - Planning and Estimating
+      - Forecasting
+      - Budgeting
+      - Unit Economics
+  - name: Optimize Usage and Cost
+    capabilities:
+      - Architecting for Cloud
+      - Rate Optimization
+      - Workload Optimization
+  - name: Manage the FinOps Practice
+    capabilities:
+      - FinOps Practice Operations
+      - Invoicing and Chargeback
+      - Onboarding Workloads
+
+billingModel:
+  pricingCategory: Free (API) / Usage-Based (on-chain gas)
+  billingFrequency: None (API) / Per-transaction (on-chain)
+  billingCurrency: ETH / USD
+  chargeCategories:
+    - Gas (on-chain minting and transactions via Protocol SDK)
+    - Third-party RPC node costs (if applicable)
+  chargeFrequency: Per-transaction (gas)
+  notes: >-
+    Zora's read APIs (NFT GraphQL, Coins SDK REST) are free with no published
+    per-call charges. Write operations (minting, transfers) incur Ethereum or
+    L2 gas fees paid by the calling wallet. Gasless premint flows defer gas
+    until a collector mints, shifting cost to the collector.
+
+focusColumns:
+  ServiceName: Zora
+  ServiceCategory: Developer Tools / Web3 API
+  ProviderName: Zora
+  PublisherName: Zora
+  InvoiceIssuerName: Zora / Ethereum Network
+  PricingCategory: Free / Usage-Based
+  PricingUnit: request (API) / transaction (on-chain)
+  BillingCurrency: USD / ETH
+  ChargeCategory: Usage
+
+meters:
+  - name: api_requests
+    description: Count of API calls to the Zora NFT GraphQL or Coins SDK REST endpoints
+    unit: request
+    aggregation: sum
+    dimensions:
+      - api
+      - endpoint
+      - tier
+      - consumer
+  - name: onchain_transactions
+    description: Minting and transfer transactions submitted via the Protocol SDK
+    unit: transaction
+    aggregation: sum
+    dimensions:
+      - network
+      - contract
+      - consumer
+      - wallet
+  - name: gas_eth
+    description: ETH paid in gas for on-chain transactions
+    unit: ETH
+    aggregation: sum
+    dimensions:
+      - network
+      - wallet
+      - consumer
+
+apis:
+  - name: Zora NFT GraphQL API
+    baseURL: https://api.zora.co/graphql
+    tags:
+      - NFT
+      - GraphQL
+      - Metadata
+      - Collections
+      - Sales
+      - Mints
+    serviceName: Zora NFT GraphQL API
+    serviceCategory: API
+  - name: Zora Coins SDK REST API
+    baseURL: https://api-sdk.zora.engineering/api
+    tags:
+      - Coins
+      - REST
+      - Market Data
+      - Profile
+    serviceName: Zora Coins SDK REST API
+    serviceCategory: API
+  - name: Zora Protocol SDK
+    baseURL: https://zora.co
+    tags:
+      - Protocol SDK
+      - Minting
+      - ERC-1155
+      - ERC-721
+    serviceName: Zora Protocol SDK
+    serviceCategory: SDK
+  - name: Zora Network RPC
+    baseURL: https://rpc.zora.energy
+    tags:
+      - RPC
+      - JSON-RPC
+      - L2
+    serviceName: Zora Network RPC
+    serviceCategory: API
+
+unitEconomics:
+  - name: Cost per 1K API Requests
+    metric: third_party_rpc_cost / (api_requests / 1000)
+    target: TBD
+  - name: Average Gas per Mint
+    metric: gas_eth / onchain_transactions
+    target: TBD
+
+optimizationRecommendations:
+  - name: Use Gasless Premints
+    description: >-
+      The Zora Protocol SDK supports gasless premints where a creator signs
+      metadata off-chain and gas is only spent when the first collector mints.
+      This eliminates upfront gas costs for creators deploying new tokens.
+  - name: Deploy on Zora Network or Base
+    description: >-
+      Minting on the Zora Network L2 or Base incurs significantly lower gas
+      fees than Ethereum mainnet. Evaluate L2 deployment for high-frequency
+      or bulk minting workflows.
+  - name: Obtain a Free API Key
+    description: >-
+      Register at https://zora.co/settings/developer to obtain a free API key.
+      This unlocks higher rate limits and avoids the 120 req/min shared cap,
+      reducing the risk of 429 errors and retry overhead.
+  - name: Use GraphQL Projections
+    description: >-
+      Request only the fields needed in GraphQL queries to reduce payload
+      sizes, improve latency, and lower downstream processing costs.
+  - name: Evaluate Third-Party RPC vs Public Node
+    description: >-
+      The public Zora Network RPC (rpc.zora.energy) is rate-limited.
+      Teams with sustained high-throughput RPC needs should evaluate Conduit,
+      QuickNode, or Alchemy managed nodes whose costs should be tracked as
+      a separate API cost line item.
+
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

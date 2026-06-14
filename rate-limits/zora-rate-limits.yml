@@ -1,0 +1,85 @@
+name: Zora API Rate Limits
+description: >
+  Request-rate and quota policies for the Zora NFT GraphQL API and Coins SDK
+  REST API. Policies are applied per IP address for unauthenticated requests
+  and per API key for authenticated requests.
+url: https://raw.githubusercontent.com/api-evangelist/zora/refs/heads/main/rate-limits/zora-rate-limits.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.1'
+provider: zora
+
+scope: per-ip-unauthenticated / per-api-key-authenticated
+
+quotas:
+  - plan: public-unauthenticated
+    requests: 120
+    window: minute
+    enforcement: hard-stop
+    overageAllowed: false
+    notes: >-
+      Shared across all unauthenticated callers from the same IP.
+      Applies to both the NFT GraphQL API (api.zora.co/graphql) and the
+      Coins SDK REST API (api-sdk.zora.engineering/api).
+  - plan: api-key
+    requests: null
+    window: minute
+    enforcement: soft-stop
+    overageAllowed: false
+    notes: >-
+      Significantly higher than the unauthenticated 120 req/min limit.
+      Exact ceiling is not publicly documented; contact Zora for details
+      on very high volume access.
+  - plan: enterprise
+    requests: null
+    window: null
+    enforcement: negotiated
+    overageAllowed: true
+    notes: Custom arrangement with Zora team.
+
+rateLimits:
+  nftGraphQLAPI:
+    endpoint: https://api.zora.co/graphql
+    unauthenticated:
+      perMinute: 120
+      header: none required
+    authenticated:
+      header: X-API-KEY
+      perMinute: higher (exact value not published)
+    paginationLimits:
+      maxPageSize: 500
+      maxPageSizeTextSearch: 50
+      notes: >-
+        Regular queries support pagination up to 500 items per page.
+        Text-based search queries are limited to 50 items per page.
+
+  coinsSdkRestAPI:
+    endpoint: https://api-sdk.zora.engineering/api
+    unauthenticated:
+      notes: Subject to high rate limiting without an API key.
+    authenticated:
+      header: api-key
+      notes: Significantly increases available rate limit.
+    keyAcquisition: https://zora.co/settings/developer
+
+responsePolicy:
+  exceededStatus: 429
+  retryAfter: true
+  notes: >-
+    Standard HTTP 429 Too Many Requests is returned when rate limits are
+    exceeded. Implement exponential back-off before retrying.
+
+upgradeGuidance:
+  - trigger: Receiving HTTP 429 responses consistently
+    action: >-
+      Obtain a free API key from https://zora.co/settings/developer and include
+      it in request headers to unlock higher rate limits.
+  - trigger: API key limits insufficient for production traffic
+    action: >-
+      Contact the Zora team via developer channels or Discord to discuss
+      enterprise-level access arrangements.
+  - trigger: High-throughput node-level RPC access
+    action: >-
+      Use a dedicated node provider such as Conduit, QuickNode, Alchemy, or
+      GetBlock for the Zora Network RPC rather than the shared public endpoint
+      at rpc.zora.energy.

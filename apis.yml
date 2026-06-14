@@ -1,0 +1,144 @@
+aid: zora
+url: https://raw.githubusercontent.com/api-evangelist/zora/refs/heads/main/apis.yml
+name: Zora
+kind: company
+description: >-
+  Zora is an NFT protocol and marketplace that enables creators to mint, sell,
+  and manage digital collectibles across Ethereum mainnet and Layer 2 networks
+  including the Zora Network (an OP Stack L2), Base, and Optimism. The platform
+  exposes a GraphQL NFT API for querying collections, token metadata, mint
+  events, on-chain sales, and creator royalty data; a Coins SDK REST API for
+  exploring and trading Zora Coins (creator monetization tokens); and a Protocol
+  SDK for contract-level interactions covering ERC-721 and ERC-1155 minting
+  workflows. API keys are available via Zora Developer Settings to unlock higher
+  rate limits beyond the public unauthenticated threshold.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - NFT
+  - Web3
+  - Blockchain
+  - Ethereum
+  - L2
+  - Creator Economy
+  - Marketplace
+  - Zora Network
+  - Base
+  - Optimism
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+apis:
+  - aid: zora:nft-api
+    name: Zora NFT GraphQL API
+    description: >-
+      GraphQL API for querying NFT metadata, on-chain sales, mint events,
+      collection attributes, and market statistics across Ethereum mainnet and
+      supported L2 networks. Provides aggregateAttributes, aggregateStat,
+      collections, events, mints, sales, search, and tokens operations.
+      Unauthenticated access is permitted up to 120 requests per minute; an
+      API key via the X-API-KEY header removes that cap.
+    humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+    baseURL: https://api.zora.co/graphql
+    tags:
+      - NFT
+      - GraphQL
+      - Collections
+      - Sales
+      - Mints
+      - Tokens
+      - Metadata
+      - ERC-721
+    properties:
+      - type: Documentation
+        url: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+      - type: Authentication
+        url: https://keys.api.zora.co/
+
+  - aid: zora:coins-rest-api
+    name: Zora Coins SDK REST API
+    description: >-
+      Language-agnostic REST API for querying Zora Coins — creator monetization
+      tokens that trade on the Zora protocol. Endpoints cover coin metadata and
+      market data, user/wallet profile holdings and activity, and explore
+      discovery lists (new, trending, top gainers). Interactive OpenAPI
+      documentation and code examples in Python, Go, and Ruby are available at
+      the api-sdk.zora.engineering/docs portal.
+    humanURL: https://docs.zora.co/coins/sdk/public-rest-api
+    baseURL: https://api-sdk.zora.engineering/api
+    tags:
+      - Coins
+      - REST
+      - Market Data
+      - Profile
+      - Discovery
+    properties:
+      - type: Documentation
+        url: https://docs.zora.co/coins/sdk/public-rest-api
+      - type: OpenAPI
+        url: https://api-sdk.zora.engineering/docs
+
+  - aid: zora:protocol-sdk
+    name: Zora Protocol SDK
+    description: >-
+      TypeScript SDK providing a Creator Client for deploying and managing Zora
+      ERC-1155 and ERC-721 contracts and a Collector Client for minting tokens
+      (both on-chain and gasless premint flows). Supports getTokensOfContract
+      to enumerate all on-chain and premint tokens for a given 1155 contract
+      across supported networks including Zora Network, Ethereum, Base, and
+      Optimism.
+    humanURL: https://nft-docs.zora.co/protocol-sdk/introduction
+    baseURL: https://zora.co
+    tags:
+      - Protocol SDK
+      - ERC-1155
+      - ERC-721
+      - Minting
+      - Creator Tools
+      - Collector
+      - TypeScript
+    properties:
+      - type: Documentation
+        url: https://nft-docs.zora.co/protocol-sdk/introduction
+      - type: GitHub
+        url: https://github.com/ourzora/zora-protocol
+
+  - aid: zora:network-rpc
+    name: Zora Network RPC API
+    description: >-
+      JSON-RPC access to the Zora Network L2 chain (Chain ID 7777777), an OP
+      Stack rollup on Ethereum. Compatible with standard Ethereum JSON-RPC
+      tooling (viem, ethers.js, web3.js). A public RPC endpoint is available
+      at https://rpc.zora.energy; higher-throughput access is offered through
+      third-party node providers including Conduit, QuickNode, Alchemy, and
+      GetBlock.
+    humanURL: https://docs.zora.co/zora-network/api-access
+    baseURL: https://rpc.zora.energy
+    tags:
+      - RPC
+      - JSON-RPC
+      - L2
+      - Zora Network
+      - Ethereum
+      - OP Stack
+    properties:
+      - type: Documentation
+        url: https://docs.zora.co/zora-network/api-access
+
+common:
+  - type: Website
+    url: https://zora.co
+  - type: Documentation
+    url: https://docs.zora.co
+  - type: GitHub
+    url: https://github.com/ourzora
+  - type: X
+    url: https://x.com/zoradevs
+  - type: Plans
+    url: plans/zora-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/zora-rate-limits.yml
+  - type: FinOps
+    url: finops/zora-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
