@@ -11,7 +11,7 @@ description: Zora is an NFT protocol and marketplace that enables creators to mi
   interactions covering ERC-721 and ERC-1155 minting workflows. API keys are available
   via Zora Developer Settings to unlock higher rate limits beyond the public unauthenticated
   threshold.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - NFT
 - Web3
