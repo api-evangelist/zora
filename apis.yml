@@ -117,6 +117,10 @@ apis:
   - type: Documentation
     url: https://docs.zora.co/zora-network/api-access
 common:
+- type: DomainSecurity
+  url: security/zora-domain-security.yml
+- type: Authentication
+  url: authentication/zora-authentication.yml
 - type: Website
   url: https://zora.co
 - type: Documentation
@@ -131,6 +135,8 @@ common:
   url: rate-limits/zora-rate-limits.yml
 - type: FinOps
   url: finops/zora-finops.yml
+- url: https://zora.co/blog
+  type: Blog
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
