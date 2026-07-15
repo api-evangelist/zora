@@ -117,6 +117,8 @@ apis:
   - type: Documentation
     url: https://docs.zora.co/zora-network/api-access
 common:
+- type: AgenticAccess
+  url: agentic-access/zora-agentic-access.yml
 - type: DomainSecurity
   url: security/zora-domain-security.yml
 - type: Authentication
