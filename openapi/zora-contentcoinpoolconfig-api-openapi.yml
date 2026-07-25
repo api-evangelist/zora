@@ -1,0 +1,108 @@
+openapi: 3.1.0
+info:
+  title: Zora SDK ApiKey ContentCoinPoolConfig API
+  description: Access to Zora data for SDK users
+  version: 1.0.0
+servers:
+- url: https://api-sdk.zora.engineering/
+  description: SDK API Production Server
+- url: https://api-sdk-staging.zora.engineering/
+  description: SDK API Staging Server
+- url: http://localhost:8787/
+  description: SDK API Local Server
+security:
+- apiKey: []
+tags:
+- name: ContentCoinPoolConfig
+paths:
+  /contentCoinPoolConfig:
+    get:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentCoinPoolConfig:
+                    type: object
+                    properties:
+                      encodedConfig:
+                        type: string
+                        nullable: false
+                        description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                      currency:
+                        type: string
+                        nullable: false
+                      lowerTicks:
+                        type: array
+                        items:
+                          type: integer
+                          nullable: false
+                          description: The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+                        nullable: false
+                      upperTicks:
+                        type: array
+                        items:
+                          type: integer
+                          nullable: false
+                          description: The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+                        nullable: false
+                      numDiscoveryPositions:
+                        type: array
+                        items:
+                          type: integer
+                          nullable: false
+                          description: The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+                        nullable: false
+                      maxDiscoverySupplyShares:
+                        type: array
+                        items:
+                          type: string
+                          nullable: false
+                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                        nullable: false
+                    required:
+                    - encodedConfig
+                    - currency
+                    - lowerTicks
+                    - upperTicks
+                    - numDiscoveryPositions
+                    - maxDiscoverySupplyShares
+                    nullable: false
+                required:
+                - contentCoinPoolConfig
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      operationId: GetContentCoinPoolConfig
+      parameters:
+      - name: creatorIdentifier
+        in: query
+        schema:
+          type: string
+          nullable: true
+        required: false
+      - name: currencyType
+        in: query
+        schema:
+          type: string
+          enum:
+          - ETH
+          - ZORA
+          - CREATOR_COIN
+          - CREATOR_COIN_OR_ZORA
+          - CUSTOM_COIN
+          nullable: false
+        required: true
+      summary: zoraSDK_contentCoinPoolConfig query
+      tags:
+      - ContentCoinPoolConfig
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: api-key

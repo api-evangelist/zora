@@ -1,0 +1,145 @@
+openapi: 3.1.0
+info:
+  title: Zora SDK ApiKey CoinsList API
+  description: Access to Zora data for SDK users
+  version: 1.0.0
+servers:
+- url: https://api-sdk.zora.engineering/
+  description: SDK API Production Server
+- url: https://api-sdk-staging.zora.engineering/
+  description: SDK API Staging Server
+- url: http://localhost:8787/
+  description: SDK API Local Server
+security:
+- apiKey: []
+tags:
+- name: CoinsList
+paths:
+  /coinsList:
+    get:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  coinsBasicInfo:
+                    type: object
+                    properties:
+                      pageInfo:
+                        type: object
+                        properties:
+                          hasNextPage:
+                            type: boolean
+                            nullable: false
+                            description: When paginating forwards, are there more items?
+                          endCursor:
+                            type: string
+                            nullable: true
+                            description: When paginating forwards, the cursor to continue.
+                        required:
+                        - hasNextPage
+                        nullable: false
+                      edges:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            node:
+                              type: object
+                              properties:
+                                coinType:
+                                  type: string
+                                  enum:
+                                  - CREATOR
+                                  - CONTENT
+                                  - TREND
+                                  nullable: false
+                                priceUsdc:
+                                  type: string
+                                  nullable: true
+                                  description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                entityName:
+                                  type: string
+                                  nullable: false
+                                  description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                name:
+                                  type: string
+                                  nullable: true
+                                  description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                symbol:
+                                  type: string
+                                  nullable: true
+                                  description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                uri:
+                                  type: string
+                                  nullable: true
+                                  description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                coinAddress:
+                                  type: string
+                                  nullable: false
+                                createdUserAddress:
+                                  type: string
+                                  nullable: false
+                                createdTimestamp:
+                                  type: string
+                                  nullable: false
+                                  description: Date with time (isoformat)
+                                platformBlocked:
+                                  type: boolean
+                                  nullable: false
+                                  description: The `Boolean` scalar type represents `true` or `false`.
+                              required:
+                              - coinType
+                              - entityName
+                              - coinAddress
+                              - createdUserAddress
+                              - createdTimestamp
+                              - platformBlocked
+                              nullable: false
+                          required:
+                          - node
+                        nullable: false
+                    required:
+                    - pageInfo
+                    - edges
+                    nullable: false
+                required:
+                - coinsBasicInfo
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      operationId: GetCoinsList
+      parameters:
+      - name: first
+        in: query
+        schema:
+          type: integer
+          nullable: false
+          default: 1000
+        required: false
+      - name: after
+        in: query
+        schema:
+          type: string
+          nullable: true
+        required: false
+      - name: includeUSDCPrice
+        in: query
+        schema:
+          type: boolean
+          nullable: false
+          default: true
+        required: false
+      summary: zoraSDK_coinsList query
+      tags:
+      - CoinsList
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: api-key

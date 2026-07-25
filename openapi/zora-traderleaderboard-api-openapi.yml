@@ -1,0 +1,149 @@
+openapi: 3.1.0
+info:
+  title: Zora SDK ApiKey TraderLeaderboard API
+  description: Access to Zora data for SDK users
+  version: 1.0.0
+servers:
+- url: https://api-sdk.zora.engineering/
+  description: SDK API Production Server
+- url: https://api-sdk-staging.zora.engineering/
+  description: SDK API Staging Server
+- url: http://localhost:8787/
+  description: SDK API Local Server
+security:
+- apiKey: []
+tags:
+- name: TraderLeaderboard
+paths:
+  /traderLeaderboard:
+    get:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  exploreTraderLeaderboard:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                        nullable: false
+                        description: The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+                      edges:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            node:
+                              type: object
+                              properties:
+                                entityName:
+                                  type: string
+                                  nullable: false
+                                  description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                score:
+                                  type: integer
+                                  nullable: false
+                                  description: The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+                                weekVolumeUsd:
+                                  type: number
+                                  format: float
+                                  nullable: false
+                                  description: The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).
+                                weekTradesCount:
+                                  type: integer
+                                  nullable: false
+                                  description: The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+                                weekGrossVolumeZora:
+                                  type: number
+                                  format: float
+                                  nullable: false
+                                  description: The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).
+                                traderProfile:
+                                  type: object
+                                  properties:
+                                    handle:
+                                      type: string
+                                      nullable: false
+                                      description: Manually set username, or truncated wallet address if the profile isn't a GraphQLAccountProfile. For full wallet address, use the profile_id field instead.
+                                    id:
+                                      type: string
+                                      nullable: false
+                                      description: The Globally Unique ID of this object
+                                  required:
+                                  - handle
+                                  - id
+                                  nullable: true
+                              required:
+                              - entityName
+                              - score
+                              - weekVolumeUsd
+                              - weekTradesCount
+                              - weekGrossVolumeZora
+                              nullable: false
+                          required:
+                          - node
+                        nullable: false
+                      pageInfo:
+                        type: object
+                        properties:
+                          hasNextPage:
+                            type: boolean
+                            nullable: false
+                            description: When paginating forwards, are there more items?
+                          endCursor:
+                            type: string
+                            nullable: true
+                            description: When paginating forwards, the cursor to continue.
+                        required:
+                        - hasNextPage
+                        nullable: false
+                    required:
+                    - count
+                    - edges
+                    - pageInfo
+                    nullable: false
+                required:
+                - exploreTraderLeaderboard
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      operationId: GetTraderLeaderboard
+      parameters:
+      - name: week
+        in: query
+        schema:
+          type: integer
+          nullable: true
+        required: false
+      - name: year
+        in: query
+        schema:
+          type: integer
+          nullable: true
+        required: false
+      - name: first
+        in: query
+        schema:
+          type: integer
+          nullable: true
+        required: false
+      - name: after
+        in: query
+        schema:
+          type: string
+          nullable: true
+        required: false
+      summary: zoraSDK_traderLeaderboard query
+      tags:
+      - TraderLeaderboard
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: api-key

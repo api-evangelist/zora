@@ -1,0 +1,256 @@
+openapi: 3.1.0
+info:
+  title: Zora SDK ApiKey Quote API
+  description: Access to Zora data for SDK users
+  version: 1.0.0
+servers:
+- url: https://api-sdk.zora.engineering/
+  description: SDK API Production Server
+- url: https://api-sdk-staging.zora.engineering/
+  description: SDK API Staging Server
+- url: http://localhost:8787/
+  description: SDK API Local Server
+security:
+- apiKey: []
+tags:
+- name: Quote
+paths:
+  /quote:
+    post:
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - success
+                - call
+                - quote
+                properties:
+                  success:
+                    type: boolean
+                  call:
+                    type: object
+                    required:
+                    - data
+                    - value
+                    - target
+                    properties:
+                      data:
+                        type: string
+                      value:
+                        type: string
+                      target:
+                        type: string
+                  permits:
+                    type: array
+                    description: The approval information for the token
+                    items:
+                      type: object
+                      required:
+                      - permit
+                      - signature
+                      properties:
+                        signature:
+                          type: string
+                        permit:
+                          type: object
+                          required:
+                          - details
+                          - spender
+                          - sigDeadline
+                          properties:
+                            sigDeadline:
+                              type: string
+                            spender:
+                              type: string
+                            details:
+                              type: object
+                              required:
+                              - token
+                              - amount
+                              - expiration
+                              - nonce
+                              properties:
+                                token:
+                                  type: string
+                                amount:
+                                  type: string
+                                expiration:
+                                  type: number
+                                nonce:
+                                  type: number
+                  trade:
+                    type: object
+                    required:
+                    - commands
+                    - value
+                    - inputs
+                    properties:
+                      commands:
+                        type: array
+                        items:
+                          type: string
+                      value:
+                        type: string
+                      inputs:
+                        type: array
+                        items:
+                          type: string
+                  quote:
+                    type: object
+                    required:
+                    - amountOut
+                    - slippage
+                    properties:
+                      amountOut:
+                        type: string
+                      slippage:
+                        type: number
+                      tokenIn:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                          address:
+                            type: string
+        '422':
+          description: Liquidity error — not enough pool liquidity for the requested trade
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - success
+                - error
+                - errorType
+                properties:
+                  success:
+                    type: string
+                    enum:
+                    - 'false'
+                  error:
+                    type: string
+                  errorType:
+                    type: string
+                    enum:
+                    - LIQUIDITY
+                    - UNKNOWN
+                    description: The type of error. LIQUIDITY indicates insufficient pool liquidity for the requested trade.
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - success
+                - error
+                - errorType
+                properties:
+                  success:
+                    type: string
+                    enum:
+                    - 'false'
+                  error:
+                    type: string
+                  errorType:
+                    type: string
+                    enum:
+                    - LIQUIDITY
+                    - UNKNOWN
+                    description: The type of error. LIQUIDITY indicates insufficient pool liquidity for the requested trade.
+      operationId: postQuote
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                referrer:
+                  type: string
+                signatures:
+                  type: array
+                  items:
+                    type: object
+                    required:
+                    - permit
+                    - signature
+                    properties:
+                      permit:
+                        type: object
+                        required:
+                        - details
+                        - spender
+                        - sigDeadline
+                        properties:
+                          details:
+                            type: object
+                            required:
+                            - token
+                            - amount
+                            - expiration
+                            - nonce
+                            properties:
+                              token:
+                                type: string
+                              amount:
+                                type: string
+                              expiration:
+                                type: number
+                              nonce:
+                                type: number
+                          spender:
+                            type: string
+                          sigDeadline:
+                            type: string
+                      signature:
+                        type: string
+                permitActiveSeconds:
+                  type: number
+                chainId:
+                  type: number
+                tokenOut:
+                  type: object
+                  required:
+                  - type
+                  properties:
+                    type:
+                      type: string
+                      enum:
+                      - eth
+                      - erc20
+                    address:
+                      type: string
+                tokenIn:
+                  type: object
+                  required:
+                  - type
+                  properties:
+                    type:
+                      type: string
+                      enum:
+                      - eth
+                      - erc20
+                    address:
+                      type: string
+                amountIn:
+                  type: string
+                slippage:
+                  type: number
+                  default: 0.05
+                recipient:
+                  type: string
+                sender:
+                  type: string
+      tags:
+      - Quote
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: api-key

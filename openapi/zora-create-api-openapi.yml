@@ -1,0 +1,154 @@
+openapi: 3.1.0
+info:
+  title: Zora SDK ApiKey Create API
+  description: Access to Zora data for SDK users
+  version: 1.0.0
+servers:
+- url: https://api-sdk.zora.engineering/
+  description: SDK API Production Server
+- url: https://api-sdk-staging.zora.engineering/
+  description: SDK API Staging Server
+- url: http://localhost:8787/
+  description: SDK API Local Server
+security:
+- apiKey: []
+tags:
+- name: Create
+paths:
+  /create/content:
+    post:
+      responses:
+        '200':
+          description: Content coin creation parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  calls:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        to:
+                          type: string
+                          description: Encoded function call data
+                        data:
+                          type: string
+                          format: address
+                          description: Target contract address
+                        value:
+                          type: string
+                          description: ETH value to send
+                      required:
+                      - to
+                      - data
+                      - value
+                  predictedCoinAddress:
+                    type: string
+                    format: address
+                    description: The predicted address where the coin will be deployed
+                  backingCurrency:
+                    type: string
+                    format: address
+                    description: The currency that the coin will be backed by
+                  usedSmartWalletRouting:
+                    type: boolean
+                    description: Whether smart wallet routing was used
+                required:
+                - calls
+                - predictedCoinAddress
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                required:
+                - error
+      operationId: postCreateContent
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                creator:
+                  type: string
+                  format: address
+                  description: EOA address of the content creator. Auto-included in the owners set and used as default payout recipient if none is specified.
+                name:
+                  type: string
+                  description: Human-readable name for the content coin.
+                symbol:
+                  type: string
+                  description: Ticker symbol for the content coin (e.g. ZORA).
+                metadata:
+                  type: object
+                  description: Metadata configuration for the content coin.
+                  properties:
+                    type:
+                      type: string
+                      enum:
+                      - RAW_URI
+                      description: Metadata type. Only RAW_URI is supported.
+                    uri:
+                      type: string
+                      format: uri
+                      description: IPFS or HTTPS URI pointing to the metadata JSON (e.g. ipfs://... or https://...).
+                  required:
+                  - type
+                  - uri
+                currency:
+                  type: string
+                  enum:
+                  - CREATOR_COIN
+                  - ZORA
+                  - ETH
+                  - CREATOR_COIN_OR_ZORA
+                  description: Backing currency selection for the pool.
+                chainId:
+                  type: number
+                  description: 'Target EVM chain ID. Supported: Base mainnet and Base Sepolia. Defaults to Base mainnet.'
+                startingMarketCap:
+                  type: string
+                  enum:
+                  - LOW
+                  - HIGH
+                  description: Initial market cap tier for the pool configuration.
+                platformReferrer:
+                  type: string
+                  format: address
+                  description: Optional platform referrer address for attribution. Use zero address if not applicable.
+                additionalOwners:
+                  type: array
+                  description: Optional additional owner addresses to include. Each owner has full admin access to the coin. The creator address is automatically included.
+                  items:
+                    type: string
+                    format: address
+                payoutRecipientOverride:
+                  type: string
+                  format: address
+                  description: Optional address to receive payouts/fees. Defaults to the creator if omitted.
+                enableSmartWalletRouting:
+                  type: boolean
+                  description: Optional flag to enable smart wallet routing. Defaults to false if omitted.
+                  default: false
+              required:
+              - creator
+              - name
+              - symbol
+              - metadata
+              - currency
+      tags:
+      - Create
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: api-key

@@ -1,0 +1,285 @@
+openapi: 3.1.0
+info:
+  title: Zora SDK ApiKey CreatorLivestreamComments API
+  description: Access to Zora data for SDK users
+  version: 1.0.0
+servers:
+- url: https://api-sdk.zora.engineering/
+  description: SDK API Production Server
+- url: https://api-sdk-staging.zora.engineering/
+  description: SDK API Staging Server
+- url: http://localhost:8787/
+  description: SDK API Local Server
+security:
+- apiKey: []
+tags:
+- name: CreatorLivestreamComments
+paths:
+  /creatorLivestreamComments:
+    get:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  zora20Token:
+                    type: object
+                    properties:
+                      creatorProfile:
+                        type: object
+                        properties:
+                          liveStream:
+                            type: object
+                            properties:
+                              comments:
+                                type: object
+                                properties:
+                                  pageInfo:
+                                    type: object
+                                    properties:
+                                      endCursor:
+                                        type: string
+                                        nullable: true
+                                        description: When paginating forwards, the cursor to continue.
+                                      hasNextPage:
+                                        type: boolean
+                                        nullable: false
+                                        description: When paginating forwards, are there more items?
+                                    required:
+                                    - hasNextPage
+                                    nullable: false
+                                  count:
+                                    type: integer
+                                    nullable: false
+                                    description: The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+                                  edges:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        cursor:
+                                          type: string
+                                          nullable: false
+                                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                        node:
+                                          type: object
+                                          properties:
+                                            id:
+                                              type: string
+                                              nullable: false
+                                              description: The Globally Unique ID of this object
+                                            commentId:
+                                              type: string
+                                              nullable: false
+                                              description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                            commentedAt:
+                                              type: string
+                                              nullable: false
+                                              description: Date with time (isoformat)
+                                            comment:
+                                              type: string
+                                              nullable: false
+                                              description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                            profile:
+                                              type: object
+                                              properties:
+                                                id:
+                                                  type: string
+                                                  nullable: false
+                                                  description: The Globally Unique ID of this object
+                                                handle:
+                                                  type: string
+                                                  nullable: false
+                                                  description: Manually set username, or truncated wallet address if the profile isn't a GraphQLAccountProfile. For full wallet address, use the profile_id field instead.
+                                                platformBlocked:
+                                                  type: boolean
+                                                  nullable: false
+                                                  description: The `Boolean` scalar type represents `true` or `false`.
+                                                avatar:
+                                                  type: object
+                                                  properties:
+                                                    previewImage:
+                                                      type: object
+                                                      properties:
+                                                        blurhash:
+                                                          type: string
+                                                          nullable: true
+                                                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                                        medium:
+                                                          type: string
+                                                          nullable: false
+                                                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                                        small:
+                                                          type: string
+                                                          nullable: false
+                                                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                                      required:
+                                                      - medium
+                                                      - small
+                                                      nullable: false
+                                                  required:
+                                                  - previewImage
+                                                  nullable: true
+                                                socialAccounts:
+                                                  type: object
+                                                  properties:
+                                                    instagram:
+                                                      type: object
+                                                      properties:
+                                                        username:
+                                                          type: string
+                                                          nullable: true
+                                                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                                        displayName:
+                                                          type: string
+                                                          nullable: true
+                                                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                                        followerCount:
+                                                          type: integer
+                                                          nullable: true
+                                                          description: The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+                                                        id:
+                                                          type: string
+                                                          nullable: true
+                                                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                                      nullable: true
+                                                    tiktok:
+                                                      type: object
+                                                      properties:
+                                                        username:
+                                                          type: string
+                                                          nullable: true
+                                                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                                        displayName:
+                                                          type: string
+                                                          nullable: true
+                                                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                                        followerCount:
+                                                          type: integer
+                                                          nullable: true
+                                                          description: The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+                                                        id:
+                                                          type: string
+                                                          nullable: true
+                                                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                                      nullable: true
+                                                    twitter:
+                                                      type: object
+                                                      properties:
+                                                        username:
+                                                          type: string
+                                                          nullable: true
+                                                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                                        displayName:
+                                                          type: string
+                                                          nullable: true
+                                                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                                        followerCount:
+                                                          type: integer
+                                                          nullable: true
+                                                          description: The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+                                                        id:
+                                                          type: string
+                                                          nullable: true
+                                                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                                      nullable: true
+                                                    farcaster:
+                                                      type: object
+                                                      properties:
+                                                        username:
+                                                          type: string
+                                                          nullable: true
+                                                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                                        displayName:
+                                                          type: string
+                                                          nullable: true
+                                                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                                        followerCount:
+                                                          type: integer
+                                                          nullable: true
+                                                          description: The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+                                                        id:
+                                                          type: string
+                                                          nullable: true
+                                                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                                      nullable: true
+                                                  nullable: false
+                                                creatorCoin:
+                                                  type: object
+                                                  properties:
+                                                    address:
+                                                      type: string
+                                                      nullable: false
+                                                  required:
+                                                  - address
+                                                  nullable: true
+                                              required:
+                                              - id
+                                              - handle
+                                              - platformBlocked
+                                              - socialAccounts
+                                              nullable: true
+                                          required:
+                                          - id
+                                          - commentId
+                                          - commentedAt
+                                          - comment
+                                          nullable: false
+                                      required:
+                                      - cursor
+                                      - node
+                                    nullable: false
+                                required:
+                                - pageInfo
+                                - count
+                                - edges
+                                nullable: false
+                            required:
+                            - comments
+                            nullable: true
+                        nullable: true
+                    nullable: true
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      operationId: GetCreatorLivestreamComments
+      parameters:
+      - name: address
+        in: query
+        schema:
+          type: string
+          nullable: false
+        required: true
+      - name: chain
+        in: query
+        schema:
+          type: integer
+          nullable: true
+          default: 8453
+        required: false
+      - name: after
+        in: query
+        schema:
+          type: string
+          nullable: true
+        required: false
+      - name: count
+        in: query
+        schema:
+          type: integer
+          nullable: false
+          default: 20
+        required: false
+      summary: zoraSDK_creatorLivestreamComments query
+      tags:
+      - CreatorLivestreamComments
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: api-key

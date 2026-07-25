@@ -1,0 +1,227 @@
+openapi: 3.1.0
+info:
+  title: Zora SDK ApiKey CoinSwaps API
+  description: Access to Zora data for SDK users
+  version: 1.0.0
+servers:
+- url: https://api-sdk.zora.engineering/
+  description: SDK API Production Server
+- url: https://api-sdk-staging.zora.engineering/
+  description: SDK API Staging Server
+- url: http://localhost:8787/
+  description: SDK API Local Server
+security:
+- apiKey: []
+tags:
+- name: CoinSwaps
+paths:
+  /coinSwaps:
+    get:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  zora20Token:
+                    type: object
+                    properties:
+                      swapActivities:
+                        type: object
+                        properties:
+                          count:
+                            type: integer
+                            nullable: false
+                            description: The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+                          edges:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                node:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      nullable: false
+                                      description: The Globally Unique ID of this object
+                                    currencyAmountWithPrice:
+                                      type: object
+                                      properties:
+                                        priceUsdc:
+                                          type: string
+                                          nullable: true
+                                          description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                        currencyAmount:
+                                          type: object
+                                          properties:
+                                            currencyAddress:
+                                              type: string
+                                              nullable: false
+                                              description: Ethereum address of the currency
+                                            amountDecimal:
+                                              type: number
+                                              format: float
+                                              nullable: false
+                                              description: Amount of the currency, in float format accounting for currency decimals
+                                          required:
+                                          - currencyAddress
+                                          - amountDecimal
+                                          nullable: false
+                                      required:
+                                      - currencyAmount
+                                      nullable: false
+                                    senderAddress:
+                                      type: string
+                                      nullable: false
+                                      description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                    recipientAddress:
+                                      type: string
+                                      nullable: false
+                                      description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                    transactionHash:
+                                      type: string
+                                      nullable: false
+                                      description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                    coinAmount:
+                                      type: string
+                                      nullable: false
+                                      description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                    blockTimestamp:
+                                      type: string
+                                      nullable: false
+                                      description: Date with time (isoformat)
+                                    activityType:
+                                      type: string
+                                      enum:
+                                      - BUY
+                                      - SELL
+                                      nullable: true
+                                    senderProfile:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: string
+                                          nullable: false
+                                          description: The Globally Unique ID of this object
+                                        handle:
+                                          type: string
+                                          nullable: false
+                                          description: Manually set username, or truncated wallet address if the profile isn't a GraphQLAccountProfile. For full wallet address, use the profile_id field instead.
+                                        platformBlocked:
+                                          type: boolean
+                                          nullable: false
+                                          description: The `Boolean` scalar type represents `true` or `false`.
+                                        avatar:
+                                          type: object
+                                          properties:
+                                            previewImage:
+                                              type: object
+                                              properties:
+                                                blurhash:
+                                                  type: string
+                                                  nullable: true
+                                                  description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                                medium:
+                                                  type: string
+                                                  nullable: false
+                                                  description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                                small:
+                                                  type: string
+                                                  nullable: false
+                                                  description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                                              required:
+                                              - medium
+                                              - small
+                                              nullable: false
+                                          required:
+                                          - previewImage
+                                          nullable: true
+                                      required:
+                                      - id
+                                      - handle
+                                      - platformBlocked
+                                      nullable: true
+                                  required:
+                                  - id
+                                  - currencyAmountWithPrice
+                                  - senderAddress
+                                  - recipientAddress
+                                  - transactionHash
+                                  - coinAmount
+                                  - blockTimestamp
+                                  nullable: false
+                                cursor:
+                                  type: string
+                                  nullable: false
+                                  description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                              required:
+                              - node
+                              - cursor
+                            nullable: false
+                          pageInfo:
+                            type: object
+                            properties:
+                              endCursor:
+                                type: string
+                                nullable: true
+                                description: When paginating forwards, the cursor to continue.
+                              hasNextPage:
+                                type: boolean
+                                nullable: false
+                                description: When paginating forwards, are there more items?
+                            required:
+                            - hasNextPage
+                            nullable: false
+                        required:
+                        - count
+                        - edges
+                        - pageInfo
+                        nullable: false
+                    required:
+                    - swapActivities
+                    nullable: true
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      operationId: GetCoinSwaps
+      parameters:
+      - name: address
+        in: query
+        schema:
+          type: string
+          nullable: false
+        required: true
+      - name: chain
+        in: query
+        schema:
+          type: integer
+          nullable: true
+          default: 8453
+        required: false
+      - name: after
+        in: query
+        schema:
+          type: string
+          nullable: true
+          default: null
+        required: false
+      - name: first
+        in: query
+        schema:
+          type: integer
+          nullable: true
+          default: 10
+        required: false
+      summary: zoraSDK_coinSwaps query
+      tags:
+      - CoinSwaps
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: api-key

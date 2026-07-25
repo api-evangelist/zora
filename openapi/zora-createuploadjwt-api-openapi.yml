@@ -1,0 +1,59 @@
+openapi: 3.1.0
+info:
+  title: Zora SDK ApiKey CreateUploadJWT API
+  description: Access to Zora data for SDK users
+  version: 1.0.0
+servers:
+- url: https://api-sdk.zora.engineering/
+  description: SDK API Production Server
+- url: https://api-sdk-staging.zora.engineering/
+  description: SDK API Staging Server
+- url: http://localhost:8787/
+  description: SDK API Local Server
+security:
+- apiKey: []
+tags:
+- name: CreateUploadJWT
+paths:
+  /createUploadJWT:
+    post:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  createUploadJwtFromApiKey:
+                    type: string
+                    nullable: false
+                    description: Generate a signed JWT for media uploads, authenticated via API key.
+                required:
+                - createUploadJwtFromApiKey
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      operationId: SetCreateUploadJWT
+      parameters: []
+      summary: zoraSDK_createUploadJWT mutation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                creatorAddress:
+                  type: string
+                  nullable: false
+              required:
+              - creatorAddress
+      tags:
+      - CreateUploadJWT
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: api-key

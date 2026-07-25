@@ -1,0 +1,150 @@
+openapi: 3.1.0
+info:
+  title: Zora SDK ApiKey CoinPriceHistory API
+  description: Access to Zora data for SDK users
+  version: 1.0.0
+servers:
+- url: https://api-sdk.zora.engineering/
+  description: SDK API Production Server
+- url: https://api-sdk-staging.zora.engineering/
+  description: SDK API Staging Server
+- url: http://localhost:8787/
+  description: SDK API Local Server
+security:
+- apiKey: []
+tags:
+- name: CoinPriceHistory
+paths:
+  /coinPriceHistory:
+    get:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  zora20Token:
+                    type: object
+                    properties:
+                      oneHour:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            timestamp:
+                              type: string
+                              nullable: false
+                              description: Date with time (isoformat)
+                            closePrice:
+                              type: string
+                              nullable: false
+                              description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                          required:
+                          - timestamp
+                          - closePrice
+                        nullable: false
+                      oneDay:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            timestamp:
+                              type: string
+                              nullable: false
+                              description: Date with time (isoformat)
+                            closePrice:
+                              type: string
+                              nullable: false
+                              description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                          required:
+                          - timestamp
+                          - closePrice
+                        nullable: false
+                      oneWeek:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            timestamp:
+                              type: string
+                              nullable: false
+                              description: Date with time (isoformat)
+                            closePrice:
+                              type: string
+                              nullable: false
+                              description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                          required:
+                          - timestamp
+                          - closePrice
+                        nullable: false
+                      oneMonth:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            timestamp:
+                              type: string
+                              nullable: false
+                              description: Date with time (isoformat)
+                            closePrice:
+                              type: string
+                              nullable: false
+                              description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                          required:
+                          - timestamp
+                          - closePrice
+                        nullable: false
+                      all:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            timestamp:
+                              type: string
+                              nullable: false
+                              description: Date with time (isoformat)
+                            closePrice:
+                              type: string
+                              nullable: false
+                              description: The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+                          required:
+                          - timestamp
+                          - closePrice
+                        nullable: false
+                    required:
+                    - oneHour
+                    - oneDay
+                    - oneWeek
+                    - oneMonth
+                    - all
+                    nullable: true
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      operationId: GetCoinPriceHistory
+      parameters:
+      - name: address
+        in: query
+        schema:
+          type: string
+          nullable: false
+        required: true
+      - name: chain
+        in: query
+        schema:
+          type: integer
+          nullable: true
+          default: 8453
+        required: false
+      summary: zoraSDK_coinPriceHistory query
+      tags:
+      - CoinPriceHistory
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: api-key
