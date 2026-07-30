@@ -11,7 +11,20 @@ description: Zora is an NFT protocol and marketplace that enables creators to mi
   interactions covering ERC-721 and ERC-1155 minting workflows. API keys are available
   via Zora Developer Settings to unlock higher rate limits beyond the public unauthenticated
   threshold.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/zora.png
 tags:
 - NFT
 - Web3
@@ -29,12 +42,11 @@ specificationVersion: '0.19'
 apis:
 - aid: zora:nft-api
   name: Zora NFT GraphQL API
-  description: GraphQL API for querying NFT metadata, on-chain sales, mint events,
-    collection attributes, and market statistics across Ethereum mainnet and supported
-    L2 networks. Provides aggregateAttributes, aggregateStat, collections, events,
-    mints, sales, search, and tokens operations. Unauthenticated access is permitted
-    up to 120 requests per minute; an API key via the X-API-KEY header removes that
-    cap.
+  description: >-
+    GraphQL API for querying NFT metadata, on-chain sales, mint events, collection attributes, and market
+    statistics across Ethereum mainnet and supported L2 networks. Provides aggregateAttributes, aggregateStat,
+    collections, events, mints, sales, search, and tokens operations. Unauthenticated access is permitted
+    up to 120 requests per minute; an API key via the X-API-KEY header removes that cap.
   humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
   baseURL: https://api.zora.co/graphql
   tags:
@@ -53,35 +65,13 @@ apis:
     url: https://keys.api.zora.co/
   - url: graphql/zora-graphql.md
     type: GraphQL
-- aid: zora:coins-rest-api
-  name: Zora Coins SDK REST API
-  description: Language-agnostic REST API for querying Zora Coins — creator monetization
-    tokens that trade on the Zora protocol. Endpoints cover coin metadata and market
-    data, user/wallet profile holdings and activity, and explore discovery lists (new,
-    trending, top gainers). Interactive OpenAPI documentation and code examples in
-    Python, Go, and Ruby are available at the api-sdk.zora.engineering/docs portal.
-  humanURL: https://docs.zora.co/coins/sdk/public-rest-api
-  baseURL: https://api-sdk.zora.engineering/api
-  tags:
-  - Coins
-  - REST
-  - Market Data
-  - Profile
-  - Discovery
-  properties:
-  - type: Documentation
-    url: https://docs.zora.co/coins/sdk/public-rest-api
-  - type: OpenAPI
-    url: https://api-sdk.zora.engineering/docs
-  - type: OpenAPI
-    url: openapi/zora-coins-rest-api-openapi.json
 - aid: zora:protocol-sdk
   name: Zora Protocol SDK
-  description: TypeScript SDK providing a Creator Client for deploying and managing
-    Zora ERC-1155 and ERC-721 contracts and a Collector Client for minting tokens
-    (both on-chain and gasless premint flows). Supports getTokensOfContract to enumerate
-    all on-chain and premint tokens for a given 1155 contract across supported networks
-    including Zora Network, Ethereum, Base, and Optimism.
+  description: >-
+    TypeScript SDK providing a Creator Client for deploying and managing Zora ERC-1155 and ERC-721 contracts
+    and a Collector Client for minting tokens (both on-chain and gasless premint flows). Supports getTokensOfContract
+    to enumerate all on-chain and premint tokens for a given 1155 contract across supported networks including
+    Zora Network, Ethereum, Base, and Optimism.
   humanURL: https://nft-docs.zora.co/protocol-sdk/introduction
   baseURL: https://zora.co
   tags:
@@ -99,11 +89,11 @@ apis:
     url: https://github.com/ourzora/zora-protocol
 - aid: zora:network-rpc
   name: Zora Network RPC API
-  description: JSON-RPC access to the Zora Network L2 chain (Chain ID 7777777), an
-    OP Stack rollup on Ethereum. Compatible with standard Ethereum JSON-RPC tooling
-    (viem, ethers.js, web3.js). A public RPC endpoint is available at https://rpc.zora.energy;
-    higher-throughput access is offered through third-party node providers including
-    Conduit, QuickNode, Alchemy, and GetBlock.
+  description: >-
+    JSON-RPC access to the Zora Network L2 chain (Chain ID 7777777), an OP Stack rollup on Ethereum. Compatible
+    with standard Ethereum JSON-RPC tooling (viem, ethers.js, web3.js). A public RPC endpoint is available
+    at https://rpc.zora.energy; higher-throughput access is offered through third-party node providers
+    including Conduit, QuickNode, Alchemy, and GetBlock.
   humanURL: https://docs.zora.co/zora-network/api-access
   baseURL: https://rpc.zora.energy
   tags:
@@ -116,6 +106,343 @@ apis:
   properties:
   - type: Documentation
     url: https://docs.zora.co/zora-network/api-access
+- aid: zora:zora-apikey-api
+  name: Zora ApiKey API
+  description: The ApiKey API from Zora — 1 operation(s) for apikey.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - ApiKey
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-apikey-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-coin-api
+  name: Zora Coin API
+  description: The Coin API from Zora — 1 operation(s) for coin.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - Coin
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-coin-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-coincomments-api
+  name: Zora CoinComments API
+  description: The CoinComments API from Zora — 1 operation(s) for coincomments.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - CoinComments
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-coincomments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-coinholders-api
+  name: Zora CoinHolders API
+  description: The CoinHolders API from Zora — 1 operation(s) for coinholders.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - CoinHolders
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-coinholders-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-coinpricehistory-api
+  name: Zora CoinPriceHistory API
+  description: The CoinPriceHistory API from Zora — 1 operation(s) for coinpricehistory.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - CoinPriceHistory
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-coinpricehistory-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-coins-api
+  name: Zora Coins API
+  description: The Coins API from Zora — 1 operation(s) for coins.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - Coins
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-coins-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-coinslist-api
+  name: Zora CoinsList API
+  description: The CoinsList API from Zora — 1 operation(s) for coinslist.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - CoinsList
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-coinslist-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-coinswaps-api
+  name: Zora CoinSwaps API
+  description: The CoinSwaps API from Zora — 1 operation(s) for coinswaps.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - CoinSwaps
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-coinswaps-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-contentcoinpoolconfig-api
+  name: Zora ContentCoinPoolConfig API
+  description: The ContentCoinPoolConfig API from Zora — 1 operation(s) for contentcoinpoolconfig.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - ContentCoinPoolConfig
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-contentcoinpoolconfig-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-create-api
+  name: Zora Create API
+  description: The Create API from Zora — 1 operation(s) for create.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - Create
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-create-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-createuploadjwt-api
+  name: Zora CreateUploadJWT API
+  description: The CreateUploadJWT API from Zora — 1 operation(s) for createuploadjwt.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - CreateUploadJWT
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-createuploadjwt-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-creatorcoinpoolconfig-api
+  name: Zora CreatorCoinPoolConfig API
+  description: The CreatorCoinPoolConfig API from Zora — 1 operation(s) for creatorcoinpoolconfig.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - CreatorCoinPoolConfig
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-creatorcoinpoolconfig-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-creatorlivestreamcomments-api
+  name: Zora CreatorLivestreamComments API
+  description: >-
+    The CreatorLivestreamComments API from Zora — 1 operation(s) for creatorlivestreamcomments.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - CreatorLivestreamComments
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-creatorlivestreamcomments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-explore-api
+  name: Zora Explore API
+  description: The Explore API from Zora — 1 operation(s) for explore.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - Explore
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-explore-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-featuredcreators-api
+  name: Zora FeaturedCreators API
+  description: The FeaturedCreators API from Zora — 1 operation(s) for featuredcreators.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - FeaturedCreators
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-featuredcreators-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-latestlivestreams-api
+  name: Zora LatestLiveStreams API
+  description: The LatestLiveStreams API from Zora — 1 operation(s) for latestlivestreams.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - LatestLiveStreams
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-latestlivestreams-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-profile-api
+  name: Zora Profile API
+  description: The Profile API from Zora — 1 operation(s) for profile.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - Profile
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-profile-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-profilebalances-api
+  name: Zora ProfileBalances API
+  description: The ProfileBalances API from Zora — 1 operation(s) for profilebalances.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - ProfileBalances
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-profilebalances-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-profilebysocialhandle-api
+  name: Zora ProfileBySocialHandle API
+  description: The ProfileBySocialHandle API from Zora — 1 operation(s) for profilebysocialhandle.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - ProfileBySocialHandle
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-profilebysocialhandle-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-profilecoins-api
+  name: Zora ProfileCoins API
+  description: The ProfileCoins API from Zora — 1 operation(s) for profilecoins.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - ProfileCoins
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-profilecoins-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-profilesocial-api
+  name: Zora ProfileSocial API
+  description: The ProfileSocial API from Zora — 1 operation(s) for profilesocial.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - ProfileSocial
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-profilesocial-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-quote-api
+  name: Zora Quote API
+  description: The Quote API from Zora — 1 operation(s) for quote.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - Quote
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-quote-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-tokeninfo-api
+  name: Zora TokenInfo API
+  description: The TokenInfo API from Zora — 1 operation(s) for tokeninfo.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - TokenInfo
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-tokeninfo-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-toplivestreams-api
+  name: Zora TopLiveStreams API
+  description: The TopLiveStreams API from Zora — 1 operation(s) for toplivestreams.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - TopLiveStreams
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-toplivestreams-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-traderleaderboard-api
+  name: Zora TraderLeaderboard API
+  description: The TraderLeaderboard API from Zora — 1 operation(s) for traderleaderboard.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - TraderLeaderboard
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-traderleaderboard-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-trendcoin-api
+  name: Zora TrendCoin API
+  description: The TrendCoin API from Zora — 1 operation(s) for trendcoin.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - TrendCoin
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-trendcoin-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-trendsbyname-api
+  name: Zora TrendsByName API
+  description: The TrendsByName API from Zora — 1 operation(s) for trendsbyname.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - TrendsByName
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-trendsbyname-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-wallettradeactivity-api
+  name: Zora WalletTradeActivity API
+  description: The WalletTradeActivity API from Zora — 1 operation(s) for wallettradeactivity.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - WalletTradeActivity
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-wallettradeactivity-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
 common:
 - type: AgenticAccess
   url: agentic-access/zora-agentic-access.yml
