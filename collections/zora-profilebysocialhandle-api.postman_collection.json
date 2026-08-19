@@ -1,0 +1,242 @@
+{
+  "item": [
+    {
+      "id": "6e79aab1-ecad-4b31-b704-8f892c9b4be0",
+      "name": "ProfileBySocialHandle",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0c700ee8-eb77-4427-8d04-9e1349a4fdf0",
+          "name": "zoraSDK_profileBySocialHandle query",
+          "request": {
+            "name": "zoraSDK_profileBySocialHandle query",
+            "description": {},
+            "url": {
+              "path": [
+                "profileBySocialHandle"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "platform",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "handle",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e2cf9304-63fe-48b2-8b06-3d931b056b4f",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profileBySocialHandle"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "platform",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "handle",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"profileBySocialHandle\": {\n    \"id\": \"string\",\n    \"handle\": \"string\",\n    \"platformBlocked\": true,\n    \"socialAccounts\": {\n      \"instagram\": {\n        \"username\": \"string\",\n        \"displayName\": \"string\",\n        \"followerCount\": 557,\n        \"id\": \"string\"\n      },\n      \"tiktok\": {\n        \"username\": \"string\",\n        \"displayName\": \"string\",\n        \"followerCount\": 3196,\n        \"id\": \"string\"\n      },\n      \"twitter\": {\n        \"username\": \"string\",\n        \"displayName\": \"string\",\n        \"followerCount\": 5889,\n        \"id\": \"string\"\n      },\n      \"farcaster\": {\n        \"username\": \"string\",\n        \"displayName\": \"string\",\n        \"followerCount\": 9017,\n        \"id\": \"string\"\n      }\n    },\n    \"username\": \"string\",\n    \"avatar\": {\n      \"previewImage\": {\n        \"medium\": \"string\",\n        \"small\": \"string\",\n        \"blurhash\": \"string\"\n      }\n    },\n    \"creatorCoin\": {\n      \"symbol\": \"string\",\n      \"marketCap\": \"string\",\n      \"marketCapDelta24h\": \"string\",\n      \"multichainAddress\": \"string\"\n    },\n    \"displayName\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d003c116-81f4-4293-b839-a2bb7dde30b6",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profileBySocialHandle"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "platform",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "handle",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "50fb7f0a-f844-496b-aaac-c29f16626c8d",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profileBySocialHandle"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "platform",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "handle",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-sdk.zora.engineering/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b3552eaf-7d03-4594-a32f-dcb4983d19e6",
+    "name": "Zora SDK ApiKey ProfileBySocialHandle API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access to Zora data for SDK users",
+      "type": "text/plain"
+    }
+  }
+}

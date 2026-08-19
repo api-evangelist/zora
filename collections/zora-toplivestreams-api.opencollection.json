@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zora SDK ApiKey TopLiveStreams API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "TopLiveStreams",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "zoraSDK_topLiveStreams query",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-sdk.zora.engineering/topLiveStreams",
+            "params": [
+              {
+                "name": "first",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "after",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "zoraSDK_topLiveStreams query"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

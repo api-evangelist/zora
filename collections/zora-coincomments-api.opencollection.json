@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zora SDK ApiKey CoinComments API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CoinComments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "zoraSDK_coinComments query",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-sdk.zora.engineering/coinComments",
+            "params": [
+              {
+                "name": "address",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "chain",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "after",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "zoraSDK_coinComments query"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zora SDK ApiKey CoinPriceHistory API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CoinPriceHistory",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "zoraSDK_coinPriceHistory query",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-sdk.zora.engineering/coinPriceHistory",
+            "params": [
+              {
+                "name": "address",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "chain",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "zoraSDK_coinPriceHistory query"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zora SDK ApiKey ProfileBySocialHandle API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ProfileBySocialHandle",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "zoraSDK_profileBySocialHandle query",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-sdk.zora.engineering/profileBySocialHandle",
+            "params": [
+              {
+                "name": "platform",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "handle",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "zoraSDK_profileBySocialHandle query"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

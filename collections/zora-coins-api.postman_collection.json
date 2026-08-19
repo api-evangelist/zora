@@ -1,0 +1,242 @@
+{
+  "item": [
+    {
+      "id": "cb0c7f02-4cf0-4312-b84f-7003ea9880db",
+      "name": "Coins",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "81b19b30-970a-4089-bb91-aee674bd7eb0",
+          "name": "zoraSDK_coins query",
+          "request": {
+            "name": "zoraSDK_coins query",
+            "description": {},
+            "url": {
+              "path": [
+                "coins"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "coins",
+                  "value": "{\"chainId\":\"<integer>\",\"collectionAddress\":\"<string>\"}",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "coins",
+                  "value": "{\"chainId\":\"<integer>\",\"collectionAddress\":\"<string>\"}",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f2f658c3-cb47-4c1d-8949-0c1fbe49ed22",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coins"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "coins",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "key": "coins",
+                      "value": "[object Object]"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"zora20Tokens\": [\n    {\n      \"id\": \"string\",\n      \"platformBlocked\": false,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"address\": \"string\",\n      \"coinType\": \"CONTENT\",\n      \"symbol\": \"string\",\n      \"totalSupply\": \"string\",\n      \"totalVolume\": \"string\",\n      \"volume24h\": \"string\",\n      \"marketCap\": \"string\",\n      \"marketCapDelta24h\": \"string\",\n      \"chainId\": 236,\n      \"uniqueHolders\": 8028,\n      \"uniswapV4PoolKey\": {\n        \"token0Address\": \"string\",\n        \"token1Address\": \"string\",\n        \"fee\": 2686,\n        \"tickSpacing\": 8614,\n        \"hookAddress\": \"string\"\n      },\n      \"uniswapV3PoolAddress\": \"string\",\n      \"zoraComments\": {\n        \"pageInfo\": {\n          \"hasNextPage\": false,\n          \"endCursor\": \"string\"\n        },\n        \"count\": 8802,\n        \"edges\": [\n          {\n            \"node\": {\n              \"commentId\": \"string\",\n              \"nonce\": \"string\",\n              \"userAddress\": \"string\",\n              \"txHash\": \"string\",\n              \"comment\": \"string\",\n              \"timestamp\": 5603,\n              \"userProfile\": {\n                \"id\": \"string\",\n                \"handle\": \"string\",\n                \"avatar\": {\n                  \"previewImage\": {\n                    \"small\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"medium\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"blurhash\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                }\n              }\n            }\n          },\n          {\n            \"node\": {\n              \"commentId\": \"string\",\n              \"nonce\": \"string\",\n              \"userAddress\": \"string\",\n              \"txHash\": \"string\",\n              \"comment\": \"string\",\n              \"timestamp\": 5761,\n              \"userProfile\": {\n                \"id\": \"string\",\n                \"handle\": \"string\",\n                \"avatar\": {\n                  \"previewImage\": {\n                    \"small\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"medium\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"blurhash\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                }\n              }\n            }\n          }\n        ]\n      },\n      \"createdAt\": \"string\",\n      \"creatorAddress\": \"string\",\n      \"poolCurrencyToken\": {\n        \"address\": \"string\",\n        \"name\": \"string\",\n        \"decimals\": 9475\n      },\n      \"tokenPrice\": {\n        \"currencyAddress\": \"string\",\n        \"priceInPoolToken\": \"string\",\n        \"priceInUsdc\": \"string\"\n      },\n      \"tokenUri\": \"string\",\n      \"platformReferrerAddress\": \"string\",\n      \"payoutRecipientAddress\": \"string\",\n      \"creatorProfile\": {\n        \"id\": \"string\",\n        \"handle\": \"string\",\n        \"platformBlocked\": false,\n        \"socialAccounts\": {\n          \"instagram\": {\n            \"username\": \"string\",\n            \"displayName\": \"string\",\n            \"followerCount\": 3835,\n            \"id\": \"string\"\n          },\n          \"tiktok\": {\n            \"username\": \"string\",\n            \"displayName\": \"string\",\n            \"followerCount\": 8247,\n            \"id\": \"string\"\n          },\n          \"twitter\": {\n            \"username\": \"string\",\n            \"displayName\": \"string\",\n            \"followerCount\": 3332,\n            \"id\": \"string\"\n          },\n          \"farcaster\": {\n            \"username\": \"string\",\n            \"displayName\": \"string\",\n            \"followerCount\": 9888,\n            \"id\": \"string\"\n          }\n        },\n        \"avatar\": {\n          \"previewImage\": {\n            \"medium\": \"string\",\n            \"small\": \"string\",\n            \"blurhash\": \"string\"\n          }\n        },\n        \"creatorCoin\": {\n          \"address\": \"string\"\n        }\n      },\n      \"mediaContent\": {\n        \"originalUri\": \"string\",\n        \"mimeType\": \"string\",\n        \"previewImage\": {\n          \"small\": \"string\",\n          \"medium\": \"string\",\n          \"blurhash\": \"string\"\n        },\n        \"videoPreviewUrl\": \"string\",\n        \"videoHlsUrl\": \"string\"\n      },\n      \"creatorEarnings\": [\n        {\n          \"amount\": {\n            \"currencyAddress\": \"string\",\n            \"amountRaw\": \"string\",\n            \"amountDecimal\": 9704.834154280492\n          },\n          \"amountUsd\": \"string\"\n        },\n        {\n          \"amount\": {\n            \"currencyAddress\": \"string\",\n            \"amountRaw\": \"string\",\n            \"amountDecimal\": 6249.99319974933\n          },\n          \"amountUsd\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"platformBlocked\": true,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"address\": \"string\",\n      \"coinType\": \"CONTENT\",\n      \"symbol\": \"string\",\n      \"totalSupply\": \"string\",\n      \"totalVolume\": \"string\",\n      \"volume24h\": \"string\",\n      \"marketCap\": \"string\",\n      \"marketCapDelta24h\": \"string\",\n      \"chainId\": 3408,\n      \"uniqueHolders\": 8882,\n      \"uniswapV4PoolKey\": {\n        \"token0Address\": \"string\",\n        \"token1Address\": \"string\",\n        \"fee\": 7536,\n        \"tickSpacing\": 1057,\n        \"hookAddress\": \"string\"\n      },\n      \"uniswapV3PoolAddress\": \"string\",\n      \"zoraComments\": {\n        \"pageInfo\": {\n          \"hasNextPage\": true,\n          \"endCursor\": \"string\"\n        },\n        \"count\": 3856,\n        \"edges\": [\n          {\n            \"node\": {\n              \"commentId\": \"string\",\n              \"nonce\": \"string\",\n              \"userAddress\": \"string\",\n              \"txHash\": \"string\",\n              \"comment\": \"string\",\n              \"timestamp\": 6702,\n              \"userProfile\": {\n                \"id\": \"string\",\n                \"handle\": \"string\",\n                \"avatar\": {\n                  \"previewImage\": {\n                    \"small\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"medium\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"blurhash\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                }\n              }\n            }\n          },\n          {\n            \"node\": {\n              \"commentId\": \"string\",\n              \"nonce\": \"string\",\n              \"userAddress\": \"string\",\n              \"txHash\": \"string\",\n              \"comment\": \"string\",\n              \"timestamp\": 6094,\n              \"userProfile\": {\n                \"id\": \"string\",\n                \"handle\": \"string\",\n                \"avatar\": {\n                  \"previewImage\": {\n                    \"small\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"medium\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"blurhash\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                }\n              }\n            }\n          }\n        ]\n      },\n      \"createdAt\": \"string\",\n      \"creatorAddress\": \"string\",\n      \"poolCurrencyToken\": {\n        \"address\": \"string\",\n        \"name\": \"string\",\n        \"decimals\": 2695\n      },\n      \"tokenPrice\": {\n        \"currencyAddress\": \"string\",\n        \"priceInPoolToken\": \"string\",\n        \"priceInUsdc\": \"string\"\n      },\n      \"tokenUri\": \"string\",\n      \"platformReferrerAddress\": \"string\",\n      \"payoutRecipientAddress\": \"string\",\n      \"creatorProfile\": {\n        \"id\": \"string\",\n        \"handle\": \"string\",\n        \"platformBlocked\": true,\n        \"socialAccounts\": {\n          \"instagram\": {\n            \"username\": \"string\",\n            \"displayName\": \"string\",\n            \"followerCount\": 1724,\n            \"id\": \"string\"\n          },\n          \"tiktok\": {\n            \"username\": \"string\",\n            \"displayName\": \"string\",\n            \"followerCount\": 8576,\n            \"id\": \"string\"\n          },\n          \"twitter\": {\n            \"username\": \"string\",\n            \"displayName\": \"string\",\n            \"followerCount\": 6453,\n            \"id\": \"string\"\n          },\n          \"farcaster\": {\n            \"username\": \"string\",\n            \"displayName\": \"string\",\n            \"followerCount\": 2402,\n            \"id\": \"string\"\n          }\n        },\n        \"avatar\": {\n          \"previewImage\": {\n            \"medium\": \"string\",\n            \"small\": \"string\",\n            \"blurhash\": \"string\"\n          }\n        },\n        \"creatorCoin\": {\n          \"address\": \"string\"\n        }\n      },\n      \"mediaContent\": {\n        \"originalUri\": \"string\",\n        \"mimeType\": \"string\",\n        \"previewImage\": {\n          \"small\": \"string\",\n          \"medium\": \"string\",\n          \"blurhash\": \"string\"\n        },\n        \"videoPreviewUrl\": \"string\",\n        \"videoHlsUrl\": \"string\"\n      },\n      \"creatorEarnings\": [\n        {\n          \"amount\": {\n            \"currencyAddress\": \"string\",\n            \"amountRaw\": \"string\",\n            \"amountDecimal\": 2205.2754993152457\n          },\n          \"amountUsd\": \"string\"\n        },\n        {\n          \"amount\": {\n            \"currencyAddress\": \"string\",\n            \"amountRaw\": \"string\",\n            \"amountDecimal\": 392.48578894433786\n          },\n          \"amountUsd\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7ad1151d-c172-4bc8-ab6b-500a9d2f6720",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coins"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "coins",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "key": "coins",
+                      "value": "[object Object]"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c38f4958-010b-406c-a903-94fcbb04180b",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coins"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "coins",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "key": "coins",
+                      "value": "[object Object]"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-sdk.zora.engineering/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0a38c4d6-84e9-40a1-8f02-6f375a2a7523",
+    "name": "Zora SDK ApiKey Coins API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access to Zora data for SDK users",
+      "type": "text/plain"
+    }
+  }
+}

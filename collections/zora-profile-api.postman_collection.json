@@ -1,0 +1,224 @@
+{
+  "item": [
+    {
+      "id": "995c4ac9-f269-45b6-a9fc-2bc778710e41",
+      "name": "Profile",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5360fe0e-5e2a-45ab-a4bc-bd91b20f2622",
+          "name": "zoraSDK_profile query",
+          "request": {
+            "name": "zoraSDK_profile query",
+            "description": {},
+            "url": {
+              "path": [
+                "profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "identifier",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4d65386d-6ee4-48a7-99bd-424c089b2150",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"profile\": {\n    \"id\": \"string\",\n    \"handle\": \"string\",\n    \"platformBlocked\": false,\n    \"username\": \"string\",\n    \"createdAt\": \"string\",\n    \"bio\": \"string\",\n    \"publicWallet\": {\n      \"walletAddress\": \"string\",\n      \"walletType\": \"SMART_WALLET\"\n    },\n    \"socialAccounts\": {\n      \"instagram\": {\n        \"username\": \"string\",\n        \"displayName\": \"string\",\n        \"followerCount\": 3110,\n        \"id\": \"string\"\n      },\n      \"tiktok\": {\n        \"username\": \"string\",\n        \"displayName\": \"string\",\n        \"followerCount\": 9097,\n        \"id\": \"string\"\n      },\n      \"twitter\": {\n        \"username\": \"string\",\n        \"displayName\": \"string\",\n        \"followerCount\": 2475,\n        \"id\": \"string\"\n      },\n      \"farcaster\": {\n        \"username\": \"string\",\n        \"displayName\": \"string\",\n        \"followerCount\": 274,\n        \"id\": \"string\"\n      }\n    },\n    \"linkedWallets\": {\n      \"edges\": [\n        {\n          \"node\": {\n            \"walletType\": \"SMART_WALLET\",\n            \"walletAddress\": \"string\"\n          }\n        },\n        {\n          \"node\": {\n            \"walletType\": \"SMART_WALLET\",\n            \"walletAddress\": \"string\"\n          }\n        }\n      ]\n    },\n    \"avatar\": {\n      \"small\": \"string\",\n      \"medium\": \"string\",\n      \"blurhash\": \"string\"\n    },\n    \"displayName\": \"string\",\n    \"website\": \"string\",\n    \"creatorCoin\": {\n      \"address\": \"string\",\n      \"marketCap\": \"string\",\n      \"marketCapDelta24h\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9d4130b5-cef3-4dad-9df5-9024e488b20b",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4f9b77d7-268f-4aed-8685-1457fd20465b",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-sdk.zora.engineering/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "cb6c7a54-2ba1-4e30-8f82-ce5616f7ad00",
+    "name": "Zora SDK ApiKey Profile API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access to Zora data for SDK users",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zora SDK ApiKey Coins API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Coins",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "zoraSDK_coins query",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-sdk.zora.engineering/coins",
+            "params": [
+              {
+                "name": "coins",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "zoraSDK_coins query"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

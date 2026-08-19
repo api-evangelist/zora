@@ -1,0 +1,241 @@
+{
+  "item": [
+    {
+      "id": "855a1bdb-e5e6-4f2a-b91c-dadb2f147ff0",
+      "name": "TrendCoin",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9587c7d1-0363-4a42-977e-2c4622668756",
+          "name": "zoraSDK_trendCoin query",
+          "request": {
+            "name": "zoraSDK_trendCoin query",
+            "description": {},
+            "url": {
+              "path": [
+                "trendCoin"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ticker",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "chainId",
+                  "value": "8453"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7e450f5e-1269-4f09-80cf-bd13ce14dfdf",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trendCoin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ticker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "chainId",
+                      "value": "8453"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"trendCoin\": {\n    \"id\": \"string\",\n    \"platformBlocked\": false,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"address\": \"string\",\n    \"coinType\": \"CONTENT\",\n    \"symbol\": \"string\",\n    \"totalSupply\": \"string\",\n    \"totalVolume\": \"string\",\n    \"volume24h\": \"string\",\n    \"marketCap\": \"string\",\n    \"marketCapDelta24h\": \"string\",\n    \"chainId\": 6567,\n    \"uniqueHolders\": 3562,\n    \"uniswapV4PoolKey\": {\n      \"token0Address\": \"string\",\n      \"token1Address\": \"string\",\n      \"fee\": 2571,\n      \"tickSpacing\": 680,\n      \"hookAddress\": \"string\"\n    },\n    \"uniswapV3PoolAddress\": \"string\",\n    \"createdAt\": \"string\",\n    \"creatorAddress\": \"string\",\n    \"poolCurrencyToken\": {\n      \"address\": \"string\",\n      \"name\": \"string\",\n      \"decimals\": 4059\n    },\n    \"tokenPrice\": {\n      \"currencyAddress\": \"string\",\n      \"priceInPoolToken\": \"string\",\n      \"priceInUsdc\": \"string\"\n    },\n    \"tokenUri\": \"string\",\n    \"platformReferrerAddress\": \"string\",\n    \"payoutRecipientAddress\": \"string\",\n    \"creatorProfile\": {\n      \"id\": \"string\",\n      \"handle\": \"string\",\n      \"platformBlocked\": false,\n      \"socialAccounts\": {\n        \"instagram\": {\n          \"username\": \"string\",\n          \"displayName\": \"string\",\n          \"followerCount\": 5720,\n          \"id\": \"string\"\n        },\n        \"tiktok\": {\n          \"username\": \"string\",\n          \"displayName\": \"string\",\n          \"followerCount\": 3550,\n          \"id\": \"string\"\n        },\n        \"twitter\": {\n          \"username\": \"string\",\n          \"displayName\": \"string\",\n          \"followerCount\": 3723,\n          \"id\": \"string\"\n        },\n        \"farcaster\": {\n          \"username\": \"string\",\n          \"displayName\": \"string\",\n          \"followerCount\": 5072,\n          \"id\": \"string\"\n        }\n      },\n      \"avatar\": {\n        \"previewImage\": {\n          \"medium\": \"string\",\n          \"small\": \"string\",\n          \"blurhash\": \"string\"\n        }\n      },\n      \"creatorCoin\": {\n        \"address\": \"string\"\n      }\n    },\n    \"mediaContent\": {\n      \"originalUri\": \"string\",\n      \"mimeType\": \"string\",\n      \"previewImage\": {\n        \"small\": \"string\",\n        \"medium\": \"string\",\n        \"blurhash\": \"string\"\n      },\n      \"videoPreviewUrl\": \"string\",\n      \"videoHlsUrl\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a9573488-267c-43ca-9e22-ebbe19bd6d9d",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trendCoin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ticker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "chainId",
+                      "value": "8453"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "61752b15-92b7-4f60-8ad2-a2d4677d22d0",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trendCoin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ticker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "chainId",
+                      "value": "8453"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-sdk.zora.engineering/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0a640aa2-2f3a-49e4-9a82-24a3701d8f21",
+    "name": "Zora SDK ApiKey TrendCoin API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access to Zora data for SDK users",
+      "type": "text/plain"
+    }
+  }
+}

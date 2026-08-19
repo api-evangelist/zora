@@ -1,0 +1,241 @@
+{
+  "item": [
+    {
+      "id": "8c34f4a5-07ed-484e-8697-f5ded77a0ecc",
+      "name": "Coin",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "02d57650-1c98-4def-9f88-b6521f34f505",
+          "name": "zoraSDK_coin query",
+          "request": {
+            "name": "zoraSDK_coin query",
+            "description": {},
+            "url": {
+              "path": [
+                "coin"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "address",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "chain",
+                  "value": "8453"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9c367602-b2f3-41d5-ab0e-2d4f1811d527",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "chain",
+                      "value": "8453"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"zora20Token\": {\n    \"id\": \"string\",\n    \"platformBlocked\": false,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"address\": \"string\",\n    \"coinType\": \"CREATOR\",\n    \"symbol\": \"string\",\n    \"totalSupply\": \"string\",\n    \"totalVolume\": \"string\",\n    \"volume24h\": \"string\",\n    \"marketCap\": \"string\",\n    \"marketCapDelta24h\": \"string\",\n    \"chainId\": 9852,\n    \"uniqueHolders\": 1574,\n    \"uniswapV4PoolKey\": {\n      \"token0Address\": \"string\",\n      \"token1Address\": \"string\",\n      \"fee\": 4120,\n      \"tickSpacing\": 3949,\n      \"hookAddress\": \"string\"\n    },\n    \"uniswapV3PoolAddress\": \"string\",\n    \"zoraComments\": {\n      \"pageInfo\": {\n        \"hasNextPage\": true,\n        \"endCursor\": \"string\"\n      },\n      \"count\": 2481,\n      \"edges\": [\n        {\n          \"node\": {\n            \"commentId\": \"string\",\n            \"nonce\": \"string\",\n            \"userAddress\": \"string\",\n            \"txHash\": \"string\",\n            \"comment\": \"string\",\n            \"timestamp\": 9812,\n            \"userProfile\": {\n              \"id\": \"string\",\n              \"handle\": \"string\",\n              \"avatar\": {\n                \"previewImage\": {\n                  \"small\": \"string\",\n                  \"medium\": \"string\",\n                  \"blurhash\": \"string\"\n                }\n              }\n            }\n          }\n        },\n        {\n          \"node\": {\n            \"commentId\": \"string\",\n            \"nonce\": \"string\",\n            \"userAddress\": \"string\",\n            \"txHash\": \"string\",\n            \"comment\": \"string\",\n            \"timestamp\": 9845,\n            \"userProfile\": {\n              \"id\": \"string\",\n              \"handle\": \"string\",\n              \"avatar\": {\n                \"previewImage\": {\n                  \"small\": \"string\",\n                  \"medium\": \"string\",\n                  \"blurhash\": \"string\"\n                }\n              }\n            }\n          }\n        }\n      ]\n    },\n    \"createdAt\": \"string\",\n    \"creatorAddress\": \"string\",\n    \"poolCurrencyToken\": {\n      \"address\": \"string\",\n      \"name\": \"string\",\n      \"decimals\": 9887\n    },\n    \"tokenPrice\": {\n      \"currencyAddress\": \"string\",\n      \"priceInPoolToken\": \"string\",\n      \"priceInUsdc\": \"string\"\n    },\n    \"tokenUri\": \"string\",\n    \"platformReferrerAddress\": \"string\",\n    \"payoutRecipientAddress\": \"string\",\n    \"creatorProfile\": {\n      \"id\": \"string\",\n      \"handle\": \"string\",\n      \"platformBlocked\": false,\n      \"socialAccounts\": {\n        \"instagram\": {\n          \"username\": \"string\",\n          \"displayName\": \"string\",\n          \"followerCount\": 1974,\n          \"id\": \"string\"\n        },\n        \"tiktok\": {\n          \"username\": \"string\",\n          \"displayName\": \"string\",\n          \"followerCount\": 1434,\n          \"id\": \"string\"\n        },\n        \"twitter\": {\n          \"username\": \"string\",\n          \"displayName\": \"string\",\n          \"followerCount\": 1654,\n          \"id\": \"string\"\n        },\n        \"farcaster\": {\n          \"username\": \"string\",\n          \"displayName\": \"string\",\n          \"followerCount\": 6175,\n          \"id\": \"string\"\n        }\n      },\n      \"avatar\": {\n        \"previewImage\": {\n          \"medium\": \"string\",\n          \"small\": \"string\",\n          \"blurhash\": \"string\"\n        }\n      },\n      \"creatorCoin\": {\n        \"address\": \"string\"\n      }\n    },\n    \"mediaContent\": {\n      \"originalUri\": \"string\",\n      \"mimeType\": \"string\",\n      \"previewImage\": {\n        \"small\": \"string\",\n        \"medium\": \"string\",\n        \"blurhash\": \"string\"\n      },\n      \"videoPreviewUrl\": \"string\",\n      \"videoHlsUrl\": \"string\"\n    },\n    \"creatorEarnings\": [\n      {\n        \"amount\": {\n          \"currencyAddress\": \"string\",\n          \"amountRaw\": \"string\",\n          \"amountDecimal\": 2286.4490559764204\n        },\n        \"amountUsd\": \"string\"\n      },\n      {\n        \"amount\": {\n          \"currencyAddress\": \"string\",\n          \"amountRaw\": \"string\",\n          \"amountDecimal\": 280.64509812828373\n        },\n        \"amountUsd\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "906015d8-f72a-450a-b4d1-8282f51da5dc",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "chain",
+                      "value": "8453"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "00e6443d-7d09-47f7-9ca9-7445c45eafd8",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "chain",
+                      "value": "8453"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-sdk.zora.engineering/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "08fc9f60-ecf3-49b4-83b5-d63d64d822e8",
+    "name": "Zora SDK ApiKey Coin API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access to Zora data for SDK users",
+      "type": "text/plain"
+    }
+  }
+}

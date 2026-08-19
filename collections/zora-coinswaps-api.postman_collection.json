@@ -1,0 +1,275 @@
+{
+  "item": [
+    {
+      "id": "c9f85e1b-bce3-4163-83b5-d4d0a8afa45c",
+      "name": "CoinSwaps",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cd2d373f-164e-4b3b-b36d-54a66ac4befd",
+          "name": "zoraSDK_coinSwaps query",
+          "request": {
+            "name": "zoraSDK_coinSwaps query",
+            "description": {},
+            "url": {
+              "path": [
+                "coinSwaps"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "address",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "chain",
+                  "value": "8453"
+                },
+                {
+                  "disabled": false,
+                  "key": "after",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "first",
+                  "value": "10"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a267718a-a3a9-4f16-8b9b-f9bfceac610d",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coinSwaps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "chain",
+                      "value": "8453"
+                    },
+                    {
+                      "key": "after",
+                      "value": ""
+                    },
+                    {
+                      "key": "first",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"zora20Token\": {\n    \"swapActivities\": {\n      \"count\": 2514,\n      \"edges\": [\n        {\n          \"node\": {\n            \"id\": \"string\",\n            \"currencyAmountWithPrice\": {\n              \"currencyAmount\": {\n                \"currencyAddress\": \"string\",\n                \"amountDecimal\": 1284.8673388223642\n              },\n              \"priceUsdc\": \"string\"\n            },\n            \"senderAddress\": \"string\",\n            \"recipientAddress\": \"string\",\n            \"transactionHash\": \"string\",\n            \"coinAmount\": \"string\",\n            \"blockTimestamp\": \"string\",\n            \"activityType\": \"BUY\",\n            \"senderProfile\": {\n              \"id\": \"string\",\n              \"handle\": \"string\",\n              \"platformBlocked\": true,\n              \"avatar\": {\n                \"previewImage\": {\n                  \"medium\": \"string\",\n                  \"small\": \"string\",\n                  \"blurhash\": \"string\"\n                }\n              }\n            }\n          },\n          \"cursor\": \"string\"\n        },\n        {\n          \"node\": {\n            \"id\": \"string\",\n            \"currencyAmountWithPrice\": {\n              \"currencyAmount\": {\n                \"currencyAddress\": \"string\",\n                \"amountDecimal\": 7192.681604747951\n              },\n              \"priceUsdc\": \"string\"\n            },\n            \"senderAddress\": \"string\",\n            \"recipientAddress\": \"string\",\n            \"transactionHash\": \"string\",\n            \"coinAmount\": \"string\",\n            \"blockTimestamp\": \"string\",\n            \"activityType\": \"SELL\",\n            \"senderProfile\": {\n              \"id\": \"string\",\n              \"handle\": \"string\",\n              \"platformBlocked\": true,\n              \"avatar\": {\n                \"previewImage\": {\n                  \"medium\": \"string\",\n                  \"small\": \"string\",\n                  \"blurhash\": \"string\"\n                }\n              }\n            }\n          },\n          \"cursor\": \"string\"\n        }\n      ],\n      \"pageInfo\": {\n        \"hasNextPage\": false,\n        \"endCursor\": \"string\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c439f761-e3bd-4858-b47f-b8e2974db922",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coinSwaps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "chain",
+                      "value": "8453"
+                    },
+                    {
+                      "key": "after",
+                      "value": ""
+                    },
+                    {
+                      "key": "first",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "90b86fc7-8e02-4838-a313-9257fe3e897f",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coinSwaps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "chain",
+                      "value": "8453"
+                    },
+                    {
+                      "key": "after",
+                      "value": ""
+                    },
+                    {
+                      "key": "first",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-sdk.zora.engineering/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "96fb63ac-c4fb-4e3f-9c10-5070f07bb786",
+    "name": "Zora SDK ApiKey CoinSwaps API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access to Zora data for SDK users",
+      "type": "text/plain"
+    }
+  }
+}

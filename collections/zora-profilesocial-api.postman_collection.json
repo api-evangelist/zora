@@ -1,0 +1,224 @@
+{
+  "item": [
+    {
+      "id": "3e96bc8f-a1b6-4103-b9af-7559907bfd85",
+      "name": "ProfileSocial",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "05d4869d-8433-437b-a7a8-6b30e21233e1",
+          "name": "zoraSDK_profileSocial query",
+          "request": {
+            "name": "zoraSDK_profileSocial query",
+            "description": {},
+            "url": {
+              "path": [
+                "profileSocial"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "identifier",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d7ed9b06-8891-43a0-bf54-5b08514cdf0c",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profileSocial"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"profile\": {\n    \"username\": \"string\",\n    \"createdAt\": \"string\",\n    \"bio\": \"string\",\n    \"publicWallet\": {\n      \"walletAddress\": \"string\",\n      \"walletType\": \"PRIVY\"\n    },\n    \"socialAccounts\": {\n      \"instagram\": {\n        \"username\": \"string\",\n        \"displayName\": \"string\",\n        \"followerCount\": 8617,\n        \"id\": \"string\"\n      },\n      \"tiktok\": {\n        \"username\": \"string\",\n        \"displayName\": \"string\",\n        \"followerCount\": 703,\n        \"id\": \"string\"\n      },\n      \"twitter\": {\n        \"username\": \"string\",\n        \"displayName\": \"string\",\n        \"followerCount\": 4752,\n        \"id\": \"string\"\n      },\n      \"farcaster\": {\n        \"username\": \"string\",\n        \"displayName\": \"string\",\n        \"followerCount\": 5428,\n        \"id\": \"string\"\n      }\n    },\n    \"linkedWallets\": {\n      \"edges\": [\n        {\n          \"node\": {\n            \"walletType\": \"SMART_WALLET\",\n            \"walletAddress\": \"string\"\n          }\n        },\n        {\n          \"node\": {\n            \"walletType\": \"SMART_WALLET\",\n            \"walletAddress\": \"string\"\n          }\n        }\n      ]\n    },\n    \"handle\": \"string\",\n    \"platformBlocked\": false,\n    \"usernameChangesCount\": 9091,\n    \"followers\": {\n      \"count\": 9539\n    },\n    \"following\": {\n      \"count\": 222\n    },\n    \"socialAccountLinkedEvents\": {\n      \"edges\": [\n        {\n          \"node\": {\n            \"id\": \"string\",\n            \"platform\": \"FARCASTER\",\n            \"socialAccountUsername\": \"string\",\n            \"occurredAt\": \"string\",\n            \"eventType\": \"LINK\"\n          }\n        },\n        {\n          \"node\": {\n            \"id\": \"string\",\n            \"platform\": \"FARCASTER\",\n            \"socialAccountUsername\": \"string\",\n            \"occurredAt\": \"string\",\n            \"eventType\": \"LINK\"\n          }\n        }\n      ]\n    },\n    \"displayName\": \"string\",\n    \"website\": \"string\",\n    \"creatorCoin\": {\n      \"address\": \"string\",\n      \"marketCap\": \"string\",\n      \"marketCapDelta24h\": \"string\"\n    },\n    \"avatar\": {\n      \"small\": \"string\",\n      \"medium\": \"string\",\n      \"blurhash\": \"string\"\n    },\n    \"externalWallet\": {\n      \"walletAddress\": \"string\",\n      \"ensName\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7d26956e-124e-489a-b21e-b7f1691422c5",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profileSocial"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "741d8e43-685f-4e09-85ac-5a56eec25046",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profileSocial"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-sdk.zora.engineering/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a62c86f0-1339-40a7-a0d4-c2f2bbf77748",
+    "name": "Zora SDK ApiKey ProfileSocial API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access to Zora data for SDK users",
+      "type": "text/plain"
+    }
+  }
+}

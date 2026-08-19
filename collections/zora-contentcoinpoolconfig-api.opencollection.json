@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zora SDK ApiKey ContentCoinPoolConfig API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ContentCoinPoolConfig",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "zoraSDK_contentCoinPoolConfig query",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-sdk.zora.engineering/contentCoinPoolConfig",
+            "params": [
+              {
+                "name": "creatorIdentifier",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "currencyType",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "zoraSDK_contentCoinPoolConfig query"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

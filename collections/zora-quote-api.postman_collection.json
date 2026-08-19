@@ -1,0 +1,247 @@
+{
+  "item": [
+    {
+      "id": "adb0d0da-95d1-47ac-9f04-c41df4334a56",
+      "name": "Quote",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fb1f3e64-77c8-4b21-bdc8-122a14489a6d",
+          "name": "post Quote",
+          "request": {
+            "name": "post Quote",
+            "description": {},
+            "url": {
+              "path": [
+                "quote"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"referrer\": \"<string>\",\n  \"signatures\": [\n    {\n      \"permit\": {\n        \"details\": {\n          \"token\": \"<string>\",\n          \"amount\": \"<string>\",\n          \"expiration\": \"<number>\",\n          \"nonce\": \"<number>\"\n        },\n        \"spender\": \"<string>\",\n        \"sigDeadline\": \"<string>\"\n      },\n      \"signature\": \"<string>\"\n    },\n    {\n      \"permit\": {\n        \"details\": {\n          \"token\": \"<string>\",\n          \"amount\": \"<string>\",\n          \"expiration\": \"<number>\",\n          \"nonce\": \"<number>\"\n        },\n        \"spender\": \"<string>\",\n        \"sigDeadline\": \"<string>\"\n      },\n      \"signature\": \"<string>\"\n    }\n  ],\n  \"permitActiveSeconds\": \"<number>\",\n  \"chainId\": \"<number>\",\n  \"tokenOut\": {\n    \"type\": \"<string>\",\n    \"address\": \"<string>\"\n  },\n  \"tokenIn\": {\n    \"type\": \"<string>\",\n    \"address\": \"<string>\"\n  },\n  \"amountIn\": \"<string>\",\n  \"slippage\": 0.05,\n  \"recipient\": \"<string>\",\n  \"sender\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2e93eb2f-9cca-4d8c-aa47-a5675cf27260",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "quote"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"referrer\": \"<string>\",\n  \"signatures\": [\n    {\n      \"permit\": {\n        \"details\": {\n          \"token\": \"<string>\",\n          \"amount\": \"<string>\",\n          \"expiration\": \"<number>\",\n          \"nonce\": \"<number>\"\n        },\n        \"spender\": \"<string>\",\n        \"sigDeadline\": \"<string>\"\n      },\n      \"signature\": \"<string>\"\n    },\n    {\n      \"permit\": {\n        \"details\": {\n          \"token\": \"<string>\",\n          \"amount\": \"<string>\",\n          \"expiration\": \"<number>\",\n          \"nonce\": \"<number>\"\n        },\n        \"spender\": \"<string>\",\n        \"sigDeadline\": \"<string>\"\n      },\n      \"signature\": \"<string>\"\n    }\n  ],\n  \"permitActiveSeconds\": \"<number>\",\n  \"chainId\": \"<number>\",\n  \"tokenOut\": {\n    \"type\": \"<string>\",\n    \"address\": \"<string>\"\n  },\n  \"tokenIn\": {\n    \"type\": \"<string>\",\n    \"address\": \"<string>\"\n  },\n  \"amountIn\": \"<string>\",\n  \"slippage\": 0.05,\n  \"recipient\": \"<string>\",\n  \"sender\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"call\": {\n    \"data\": \"string\",\n    \"value\": \"string\",\n    \"target\": \"string\"\n  },\n  \"quote\": {\n    \"amountOut\": \"string\",\n    \"slippage\": 4368.561000859412,\n    \"tokenIn\": {\n      \"type\": \"string\",\n      \"address\": \"string\"\n    }\n  },\n  \"permits\": [\n    {\n      \"permit\": {\n        \"details\": {\n          \"token\": \"string\",\n          \"amount\": \"string\",\n          \"expiration\": 8620.379628547971,\n          \"nonce\": 6680.550082116852\n        },\n        \"spender\": \"string\",\n        \"sigDeadline\": \"string\"\n      },\n      \"signature\": \"string\"\n    },\n    {\n      \"permit\": {\n        \"details\": {\n          \"token\": \"string\",\n          \"amount\": \"string\",\n          \"expiration\": 4355.266740866881,\n          \"nonce\": 4085.0539072252823\n        },\n        \"spender\": \"string\",\n        \"sigDeadline\": \"string\"\n      },\n      \"signature\": \"string\"\n    }\n  ],\n  \"trade\": {\n    \"commands\": [\n      \"string\",\n      \"string\"\n    ],\n    \"value\": \"string\",\n    \"inputs\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6fa54672-f820-4198-a433-19e1c0474b87",
+              "name": "Liquidity error — not enough pool liquidity for the requested trade",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "quote"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"referrer\": \"<string>\",\n  \"signatures\": [\n    {\n      \"permit\": {\n        \"details\": {\n          \"token\": \"<string>\",\n          \"amount\": \"<string>\",\n          \"expiration\": \"<number>\",\n          \"nonce\": \"<number>\"\n        },\n        \"spender\": \"<string>\",\n        \"sigDeadline\": \"<string>\"\n      },\n      \"signature\": \"<string>\"\n    },\n    {\n      \"permit\": {\n        \"details\": {\n          \"token\": \"<string>\",\n          \"amount\": \"<string>\",\n          \"expiration\": \"<number>\",\n          \"nonce\": \"<number>\"\n        },\n        \"spender\": \"<string>\",\n        \"sigDeadline\": \"<string>\"\n      },\n      \"signature\": \"<string>\"\n    }\n  ],\n  \"permitActiveSeconds\": \"<number>\",\n  \"chainId\": \"<number>\",\n  \"tokenOut\": {\n    \"type\": \"<string>\",\n    \"address\": \"<string>\"\n  },\n  \"tokenIn\": {\n    \"type\": \"<string>\",\n    \"address\": \"<string>\"\n  },\n  \"amountIn\": \"<string>\",\n  \"slippage\": 0.05,\n  \"recipient\": \"<string>\",\n  \"sender\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"false\",\n  \"error\": \"string\",\n  \"errorType\": \"UNKNOWN\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "82b930e6-ab13-49fc-8b2a-39034ca2235b",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "quote"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"referrer\": \"<string>\",\n  \"signatures\": [\n    {\n      \"permit\": {\n        \"details\": {\n          \"token\": \"<string>\",\n          \"amount\": \"<string>\",\n          \"expiration\": \"<number>\",\n          \"nonce\": \"<number>\"\n        },\n        \"spender\": \"<string>\",\n        \"sigDeadline\": \"<string>\"\n      },\n      \"signature\": \"<string>\"\n    },\n    {\n      \"permit\": {\n        \"details\": {\n          \"token\": \"<string>\",\n          \"amount\": \"<string>\",\n          \"expiration\": \"<number>\",\n          \"nonce\": \"<number>\"\n        },\n        \"spender\": \"<string>\",\n        \"sigDeadline\": \"<string>\"\n      },\n      \"signature\": \"<string>\"\n    }\n  ],\n  \"permitActiveSeconds\": \"<number>\",\n  \"chainId\": \"<number>\",\n  \"tokenOut\": {\n    \"type\": \"<string>\",\n    \"address\": \"<string>\"\n  },\n  \"tokenIn\": {\n    \"type\": \"<string>\",\n    \"address\": \"<string>\"\n  },\n  \"amountIn\": \"<string>\",\n  \"slippage\": 0.05,\n  \"recipient\": \"<string>\",\n  \"sender\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"false\",\n  \"error\": \"string\",\n  \"errorType\": \"UNKNOWN\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-sdk.zora.engineering/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a4bcbee3-cc68-4de0-9e44-dafff90fea09",
+    "name": "Zora SDK ApiKey Quote API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access to Zora data for SDK users",
+      "type": "text/plain"
+    }
+  }
+}
