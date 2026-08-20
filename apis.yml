@@ -52,6 +52,15 @@ apis:
   tags:
   - NFT
   - GraphQL
+  - Collection
+  - Sales
+  - Mints
+  - Tokens
+  - Metadata
+  - ERC-721
+  tags_raw:
+  - NFT
+  - GraphQL
   - Collections
   - Sales
   - Mints
@@ -112,6 +121,8 @@ apis:
   humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
   baseURL: https://api.zora.co/graphql
   tags:
+  - APIKeys
+  tags_raw:
   - ApiKey
   properties:
   - type: OpenAPI
@@ -219,7 +230,8 @@ apis:
   description: The Create API from Zora — 1 operation(s) for create.
   humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
   baseURL: https://api.zora.co/graphql
-  tags:
+  tags: []
+  tags_raw:
   - Create
   properties:
   - type: OpenAPI
@@ -365,6 +377,8 @@ apis:
   humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
   baseURL: https://api.zora.co/graphql
   tags:
+  - Quotes
+  tags_raw:
   - Quote
   properties:
   - type: OpenAPI
