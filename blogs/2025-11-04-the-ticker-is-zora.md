@@ -1,5 +1,5 @@
 ---
-title: "The Ticker is \$ZORA"
+title: "The Ticker is $ZORA"
 url: "https://zora.co/blog/the-ticker-is-zora"
 date: "2025-11-04"
 author: ""

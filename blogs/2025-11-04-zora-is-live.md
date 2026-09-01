@@ -1,5 +1,5 @@
 ---
-title: "\$ZORA is live"
+title: "$ZORA is live"
 url: "https://zora.co/blog/zora-is-live"
 date: "2025-11-04"
 author: ""

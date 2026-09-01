@@ -1,5 +1,5 @@
 ---
-title: "Adding liquidity on \$ZORA"
+title: "Adding liquidity on $ZORA"
 url: "https://zora.co/blog/adding-liquidity-on-zora"
 date: "2025-11-20"
 author: ""
