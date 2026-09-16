@@ -128,20 +128,6 @@ apis:
   properties:
   - type: Documentation
     url: https://docs.zora.co/zora-network/api-access
-- aid: zora:zora-apikey-api
-  name: Zora ApiKey API
-  description: The ApiKey API from Zora — 1 operation(s) for apikey.
-  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
-  baseURL: https://api.zora.co/graphql
-  tags:
-  - APIKeys
-  tags_raw:
-  - ApiKey
-  properties:
-  - type: OpenAPI
-    url: openapi/zora-apikey-api-openapi.yml
-  - type: Documentation
-    url: https://docs.zora.co/coins/sdk/public-rest-api
 - aid: zora:zora-coin-api
   name: Zora Coin API
   description: The Coin API from Zora — 1 operation(s) for coin.
@@ -468,6 +454,18 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/zora-wallettradeactivity-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zora.co/coins/sdk/public-rest-api
+- aid: zora:zora-api-key-api
+  name: Zora API Key API
+  description: The API Key API from Zora — 1 operation(s) for api key.
+  humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
+  baseURL: https://api.zora.co/graphql
+  tags:
+  - API Key
+  properties:
+  - type: OpenAPI
+    url: openapi/zora-api-key-api-openapi.yml
   - type: Documentation
     url: https://docs.zora.co/coins/sdk/public-rest-api
 common:
