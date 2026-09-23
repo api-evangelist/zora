@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Zora SDK ApiKey Quote API
+  title: Zora SDK Quote API
   description: Access to Zora data for SDK users
   version: 1.0.0
 servers:
@@ -248,6 +248,8 @@ paths:
                   type: string
       tags:
       - Quote
+      summary: Post quote
+      x-summary-source: derived
 components:
   securitySchemes:
     apiKey:
