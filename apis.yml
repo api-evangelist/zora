@@ -13,15 +13,19 @@ description: Zora is an NFT protocol and marketplace that enables creators to mi
   threshold.
 deliveryModel:
   model: saas
-  open_source: false
+  license_evidence:
+    not_product:
+    - ourzora/zora-protocol
+  open_source: unknown
   commercial: true
   callable_host: true
   label: Hosted service · you call their endpoint
-  confidence: high
+  confidence: low
   source:
   - openapi
   - pricing
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: freemium
@@ -95,7 +99,6 @@ apis:
     to enumerate all on-chain and premint tokens for a given 1155 contract across supported networks including
     Zora Network, Ethereum, Base, and Optimism.
   humanURL: https://nft-docs.zora.co/protocol-sdk/introduction
-  baseURL: https://zora.co
   tags:
   - Protocol SDK
   - ERC-1155
@@ -472,8 +475,6 @@ apis:
   humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
   baseURL: https://api.zora.co/graphql
   tags:
-  - APIKeys
-  tags_raw:
   - API Key
   properties:
   - type: OpenAPI
