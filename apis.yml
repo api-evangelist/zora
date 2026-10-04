@@ -475,6 +475,8 @@ apis:
   humanURL: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
   baseURL: https://api.zora.co/graphql
   tags:
+  - APIKeys
+  tags_raw:
   - API Key
   properties:
   - type: OpenAPI
