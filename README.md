@@ -64,38 +64,206 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Zora is an NFT protocol and marketplace that enables creators to mint, sell, and manage digital collectibles across Ethereum mainnet and Layer 2 networks including the Zora Network (an OP Stack L2), Base, and Optimism. The platform exposes a GraphQL NFT API for querying collections, token metadata, mint events, on-chain sales, and creator royalty data; a Coins SDK REST API for exploring and trading Zora Coins (creator monetization tokens); and a Protocol SDK for contract-level interactions covering ERC-721 and ERC-1155 minting workflows.
+Zora is an NFT protocol and marketplace that enables creators to mint, sell, and manage digital collectibles across Ethereum mainnet and Layer 2 networks including the Zora Network (an OP Stack L2), Base, and Optimism. The platform exposes a GraphQL NFT API for querying collections, token metadata, mint events, on-chain sales, and creator royalty data; a Coins SDK REST API for exploring and trading Zora Coins (creator monetization tokens); and a Protocol SDK for contract-level interactions covering ERC-721 and ERC-1155 minting workflows. API keys are available via Zora Developer Settings to unlock higher rate limits beyond the public unauthenticated threshold.
 
-## APIs
+**Areas:** NFT · Web3 · Blockchain · Ethereum · L2 · Creator Economy · Marketplace · Zora Network · Base · Optimism
 
-| API | Base URL | Description |
-|-----|----------|-------------|
-| Zora NFT GraphQL API | `https://api.zora.co/graphql` | Query NFT metadata, sales, mints, collections, and token data |
-| Zora Coins SDK REST API | `https://api-sdk.zora.engineering/api` | Coins market data, profiles, and discovery lists |
-| Zora Protocol SDK | TypeScript package | Creator and Collector clients for minting ERC-721 and ERC-1155 tokens |
-| Zora Network RPC | `https://rpc.zora.energy` | JSON-RPC access to the Zora Network L2 chain |
+## Zora on APIs.io
 
-## Authentication
+Everything profiled for Zora is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/zora/](https://apis.io/providers/zora/)** — or go straight to one of the APIs or properties below.
 
-API key registration is available at https://zora.co/settings/developer. Without a key, the NFT GraphQL API and Coins SDK REST API allow up to 120 requests per minute. An API key significantly increases this limit and is required for production applications.
+### APIs (31)
 
-- NFT GraphQL API: `X-API-KEY: <key>` header
-- Coins SDK REST API: `api-key: <key>` header
+- [Zora NFT GraphQL API](https://apis.io/apis/zora/nft-api/) — GraphQL API for querying NFT metadata, on-chain sales, mint events, collection attributes, and market statistics across Ethereum mainnet and supported L2…
+- [Zora Protocol SDK](https://apis.io/apis/zora/protocol-sdk/) — TypeScript SDK providing a Creator Client for deploying and managing Zora ERC-1155 and ERC-721 contracts and a Collector Client for minting tokens (both…
+- [Zora Network RPC API](https://apis.io/apis/zora/network-rpc/) — JSON-RPC access to the Zora Network L2 chain (Chain ID 7777777), an OP Stack rollup on Ethereum. Compatible with standard Ethereum JSON-RPC tooling (viem,…
+- [Zora Coin API](https://apis.io/apis/zora/zora-coin-api/) — The Coin API from Zora — 1 operation(s) for coin.
+- [Zora CoinComments API](https://apis.io/apis/zora/zora-coincomments-api/) — The CoinComments API from Zora — 1 operation(s) for coincomments.
+- [Zora CoinHolders API](https://apis.io/apis/zora/zora-coinholders-api/) — The CoinHolders API from Zora — 1 operation(s) for coinholders.
+- [Zora CoinPriceHistory API](https://apis.io/apis/zora/zora-coinpricehistory-api/) — The CoinPriceHistory API from Zora — 1 operation(s) for coinpricehistory.
+- [Zora Coins API](https://apis.io/apis/zora/zora-coins-api/) — The Coins API from Zora — 1 operation(s) for coins.
+- [Zora CoinsList API](https://apis.io/apis/zora/zora-coinslist-api/) — The CoinsList API from Zora — 1 operation(s) for coinslist.
+- [Zora CoinSwaps API](https://apis.io/apis/zora/zora-coinswaps-api/) — The CoinSwaps API from Zora — 1 operation(s) for coinswaps.
+- [Zora ContentCoinPoolConfig API](https://apis.io/apis/zora/zora-contentcoinpoolconfig-api/) — The ContentCoinPoolConfig API from Zora — 1 operation(s) for contentcoinpoolconfig.
+- [Zora Create API](https://apis.io/apis/zora/zora-create-api/) — The Create API from Zora — 1 operation(s) for create.
+- [Zora CreateUploadJWT API](https://apis.io/apis/zora/zora-createuploadjwt-api/) — The CreateUploadJWT API from Zora — 1 operation(s) for createuploadjwt.
+- [Zora CreatorCoinPoolConfig API](https://apis.io/apis/zora/zora-creatorcoinpoolconfig-api/) — The CreatorCoinPoolConfig API from Zora — 1 operation(s) for creatorcoinpoolconfig.
+- [Zora CreatorLivestreamComments API](https://apis.io/apis/zora/zora-creatorlivestreamcomments-api/) — The CreatorLivestreamComments API from Zora — 1 operation(s) for creatorlivestreamcomments.
+- [Zora Explore API](https://apis.io/apis/zora/zora-explore-api/) — The Explore API from Zora — 1 operation(s) for explore.
+- [Zora FeaturedCreators API](https://apis.io/apis/zora/zora-featuredcreators-api/) — The FeaturedCreators API from Zora — 1 operation(s) for featuredcreators.
+- [Zora LatestLiveStreams API](https://apis.io/apis/zora/zora-latestlivestreams-api/) — The LatestLiveStreams API from Zora — 1 operation(s) for latestlivestreams.
+- [Zora Profile API](https://apis.io/apis/zora/zora-profile-api/) — The Profile API from Zora — 1 operation(s) for profile.
+- [Zora ProfileBalances API](https://apis.io/apis/zora/zora-profilebalances-api/) — The ProfileBalances API from Zora — 1 operation(s) for profilebalances.
+- [Zora ProfileBySocialHandle API](https://apis.io/apis/zora/zora-profilebysocialhandle-api/) — The ProfileBySocialHandle API from Zora — 1 operation(s) for profilebysocialhandle.
+- [Zora ProfileCoins API](https://apis.io/apis/zora/zora-profilecoins-api/) — The ProfileCoins API from Zora — 1 operation(s) for profilecoins.
+- [Zora ProfileSocial API](https://apis.io/apis/zora/zora-profilesocial-api/) — The ProfileSocial API from Zora — 1 operation(s) for profilesocial.
+- [Zora Quote API](https://apis.io/apis/zora/zora-quote-api/) — The Quote API from Zora — 1 operation(s) for quote.
+- [Zora TokenInfo API](https://apis.io/apis/zora/zora-tokeninfo-api/) — The TokenInfo API from Zora — 1 operation(s) for tokeninfo.
+- [Zora TopLiveStreams API](https://apis.io/apis/zora/zora-toplivestreams-api/) — The TopLiveStreams API from Zora — 1 operation(s) for toplivestreams.
+- [Zora TraderLeaderboard API](https://apis.io/apis/zora/zora-traderleaderboard-api/) — The TraderLeaderboard API from Zora — 1 operation(s) for traderleaderboard.
+- [Zora TrendCoin API](https://apis.io/apis/zora/zora-trendcoin-api/) — The TrendCoin API from Zora — 1 operation(s) for trendcoin.
+- [Zora TrendsByName API](https://apis.io/apis/zora/zora-trendsbyname-api/) — The TrendsByName API from Zora — 1 operation(s) for trendsbyname.
+- [Zora WalletTradeActivity API](https://apis.io/apis/zora/zora-wallettradeactivity-api/) — The WalletTradeActivity API from Zora — 1 operation(s) for wallettradeactivity.
+- [Zora API Key API](https://apis.io/apis/zora/zora-api-key-api/) — The API Key API from Zora — 1 operation(s) for api key.
 
-## Resources
+### Published properties
 
-- Website: https://zora.co
-- Developer Docs: https://docs.zora.co
-- NFT API Docs: https://github.com/ourzora/zora-docs/blob/main/docs/zora-api/intro.mdx
-- Coins SDK REST API: https://docs.zora.co/coins/sdk/public-rest-api
-- Interactive OpenAPI: https://api-sdk.zora.engineering/docs
-- Protocol SDK: https://nft-docs.zora.co/protocol-sdk/introduction
-- GitHub: https://github.com/ourzora
-- X: https://x.com/zoradevs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Repository Contents
+#### GraphQL (1)
 
-- `apis.yml` — APIs.json 0.19 provider profile
-- `plans/zora-plans-pricing.yml` — API access tiers and pricing
-- `rate-limits/zora-rate-limits.yml` — Rate limit policies
-- `finops/zora-finops.yml` — FinOps Framework FOCUS-aligned cost model
+GraphQL schemas.
+
+- [Zora GraphQL API](https://apis.io/graphqls/zora/zora-graphql/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Zora Agentic Access](https://apis.io/agentic-access/zora/zora-agentic-access/)
+
+#### JSON Schema (6)
+
+The data models the API reads and writes.
+
+- [zoraSDK_coin query](https://apis.io/schemas/zora/zora-coin/)
+- [zoraSDK_coinHolders query](https://apis.io/schemas/zora/zora-coinholders/)
+- [zoraSDK_coinPriceHistory query](https://apis.io/schemas/zora/zora-coinpricehistory/)
+- [zoraSDK_coins query](https://apis.io/schemas/zora/zora-coins/)
+- [zoraSDK_explore query](https://apis.io/schemas/zora/zora-explore/)
+- [zoraSDK_profile query](https://apis.io/schemas/zora/zora-profile/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Zora Context](https://apis.io/jsonld/zora/zora-context/)
+
+#### Examples (1)
+
+Example requests and responses.
+
+- [Zora Coins Api Examples](https://apis.io/examples/zora/zora-coins-api-examples/)
+
+#### Collections (28)
+
+Postman and Open Collection request collections.
+
+- [Zora SDK ApiKey API](https://apis.io/collections/zora/open-zora-apikey-api/)
+- [Zora SDK ApiKey Coin API](https://apis.io/collections/zora/open-zora-coin-api/)
+- [Zora SDK ApiKey CoinComments API](https://apis.io/collections/zora/open-zora-coincomments-api/)
+- [Zora SDK ApiKey CoinHolders API](https://apis.io/collections/zora/open-zora-coinholders-api/)
+- [Zora SDK ApiKey CoinPriceHistory API](https://apis.io/collections/zora/open-zora-coinpricehistory-api/)
+- [Zora SDK ApiKey Coins API](https://apis.io/collections/zora/open-zora-coins-api/)
+- [Zora SDK ApiKey CoinsList API](https://apis.io/collections/zora/open-zora-coinslist-api/)
+- [Zora SDK ApiKey CoinSwaps API](https://apis.io/collections/zora/open-zora-coinswaps-api/)
+- [Zora SDK ApiKey ContentCoinPoolConfig API](https://apis.io/collections/zora/open-zora-contentcoinpoolconfig-api/)
+- [Zora SDK ApiKey Create API](https://apis.io/collections/zora/open-zora-create-api/)
+- [Zora SDK ApiKey CreateUploadJWT API](https://apis.io/collections/zora/open-zora-createuploadjwt-api/)
+- [Zora SDK ApiKey CreatorCoinPoolConfig API](https://apis.io/collections/zora/open-zora-creatorcoinpoolconfig-api/)
+- [Zora SDK ApiKey CreatorLivestreamComments API](https://apis.io/collections/zora/open-zora-creatorlivestreamcomments-api/)
+- [Zora SDK ApiKey Explore API](https://apis.io/collections/zora/open-zora-explore-api/)
+- [Zora SDK ApiKey FeaturedCreators API](https://apis.io/collections/zora/open-zora-featuredcreators-api/)
+- [Zora SDK ApiKey LatestLiveStreams API](https://apis.io/collections/zora/open-zora-latestlivestreams-api/)
+- [Zora SDK ApiKey Profile API](https://apis.io/collections/zora/open-zora-profile-api/)
+- [Zora SDK ApiKey ProfileBalances API](https://apis.io/collections/zora/open-zora-profilebalances-api/)
+- [Zora SDK ApiKey ProfileBySocialHandle API](https://apis.io/collections/zora/open-zora-profilebysocialhandle-api/)
+- [Zora SDK ApiKey ProfileCoins API](https://apis.io/collections/zora/open-zora-profilecoins-api/)
+- [Zora SDK ApiKey ProfileSocial API](https://apis.io/collections/zora/open-zora-profilesocial-api/)
+- [Zora SDK ApiKey Quote API](https://apis.io/collections/zora/open-zora-quote-api/)
+- [Zora SDK ApiKey TokenInfo API](https://apis.io/collections/zora/open-zora-tokeninfo-api/)
+- [Zora SDK ApiKey TopLiveStreams API](https://apis.io/collections/zora/open-zora-toplivestreams-api/)
+- [Zora SDK ApiKey TraderLeaderboard API](https://apis.io/collections/zora/open-zora-traderleaderboard-api/)
+- …and 3 more published on APIs.io
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Zora — jsonschema rules](https://apis.io/rules/zora/zora-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Zora Authentication](https://apis.io/security/zora/zora-authentication/)
+- [Zora Domain Security](https://apis.io/security/zora/zora-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Zora Plans Pricing](https://apis.io/plans/zora/zora-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Zora Rate Limits](https://apis.io/rate-limits/zora/zora-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Zora Finops](https://apis.io/finops/zora/zora-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://zora.co)
+- [Documentation](https://docs.zora.co)
+- [Blog](https://zora.co/blog)
+
+## API Evangelist rating
+
+**Kin Score 25.8** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 54.2 |
+| Contract governance | 9.8 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 17.9 |
+| Access clarity | 7.9 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/zora/](https://apis.io/providers/zora/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Zora: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/zora/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
